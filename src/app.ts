@@ -6,8 +6,10 @@ const cors = require("cors");
 
 import { route } from "./route";
 
+const overrideDatabase = true; // for development
+
 dbConfig
-    .sync()
+  .sync({ force: overrideDatabase })
   .then(() => console.log("connected to db"))
   .catch((error) => {
     console.log("sth is not yes", error);

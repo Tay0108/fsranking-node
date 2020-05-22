@@ -5,6 +5,8 @@ import { nationalityFactory } from "./nationalityModel";
 import { locationFactory } from "./locationModel";
 import { resultFactory } from "./resultModel";
 import { categoryFactory } from "./categoryModel";
+import { competitionHasCategoryFactory } from "./competitionHasCategoryModel";
+import { socialMediaFactory } from "./SocialMediaModel";
 
 export const dbConfig = new sequelize.Sequelize(
   process.env.DB_NAME,
@@ -28,11 +30,25 @@ export const dbConfig = new sequelize.Sequelize(
 
 export const Category = categoryFactory(dbConfig);
 export const Competition = competitionFactory(dbConfig);
+export const CompetitionHasCategory = competitionHasCategoryFactory(dbConfig);
 export const Location = locationFactory(dbConfig);
 export const Nationality = nationalityFactory(dbConfig);
+export const SocialMedia = socialMediaFactory(dbConfig);
 export const Player = playerFactory(dbConfig);
 export const Result = resultFactory(dbConfig);
 
 // Relationships:
 
+Player.belongsTo(Nationality);
+Player.belongsTo(SocialMedia);
 
+Competition.belongsTo(Location);
+Competition.belongsToMany(Category, {
+  through: { model: CompetitionHasCategory },
+});
+
+Result.belongsTo(Competition);
+Result.belongsTo(Player);
+Result.belongsTo(Category);
+
+// Competition.hasMany();
