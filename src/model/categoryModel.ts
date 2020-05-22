@@ -3,6 +3,7 @@ import { BuildOptions, DataTypes, Model, Sequelize } from "sequelize";
 export interface CategoryAttributes {
   id: number;
   name: string;
+  gender: string;
 }
 
 export interface CategoryModel
@@ -22,6 +23,10 @@ export function categoryFactory(sequelize: Sequelize): CategoryStatic {
       primaryKey: true,
     },
     name: {
+      type: DataTypes.STRING,
+      allowNull: false,
+    },
+    gender: {
       type: DataTypes.STRING,
       allowNull: false,
     },

@@ -2,6 +2,7 @@ import { BuildOptions, DataTypes, Model, Sequelize } from "sequelize";
 
 export interface PlayerAttributes {
   id: number;
+  gender: string;
   firstName: string;
   lastName: string;
   nickname: string;
@@ -24,6 +25,10 @@ export function playerFactory(sequelize: Sequelize): PlayerStatic {
       type: DataTypes.INTEGER.UNSIGNED,
       autoIncrement: true,
       primaryKey: true,
+    },
+    gender: {
+      type: DataTypes.STRING,
+      allowNull: false,
     },
     firstName: {
       type: DataTypes.STRING,
