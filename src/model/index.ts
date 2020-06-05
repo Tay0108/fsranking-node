@@ -20,8 +20,8 @@ export const dbConfig = new sequelize.Sequelize(
       min: 0,
       max: 5,
       acquire: 30000,
-      idle: 10000,
-    },
+      idle: 10000
+    }
   }
 );
 
@@ -44,7 +44,7 @@ Player.belongsTo(SocialMedia);
 
 Competition.belongsTo(Location);
 Competition.belongsToMany(Category, {
-  through: { model: CompetitionHasCategory },
+  through: { model: CompetitionHasCategory }
 });
 
 Result.belongsTo(Competition);

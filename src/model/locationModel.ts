@@ -21,29 +21,29 @@ export function locationFactory(sequelize: Sequelize): LocationStatic {
     id: {
       type: DataTypes.INTEGER.UNSIGNED,
       autoIncrement: true,
-      primaryKey: true,
+      primaryKey: true
     },
     name: {
       type: DataTypes.STRING,
-      allowNull: false,
+      allowNull: false
     },
     latitude: {
       type: DataTypes.DOUBLE,
-      allowNull: true,
+      allowNull: true
     },
     longitude: {
       type: DataTypes.DOUBLE,
-      allowNull: true,
+      allowNull: true
     },
     createdAt: {
       type: DataTypes.DATE,
       allowNull: false,
-      defaultValue: DataTypes.NOW,
+      defaultValue: DataTypes.NOW
     },
     updatedAt: {
       type: DataTypes.DATE,
       allowNull: false,
-      defaultValue: DataTypes.NOW,
-    },
+      defaultValue: DataTypes.NOW
+    }
   });
 }

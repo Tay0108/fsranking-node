@@ -6,7 +6,7 @@ const cors = require("cors");
 
 import { route } from "./route";
 
-const overrideDatabase = true; // for development
+const overrideDatabase = process.env.DB_OVERRIDE === "true";
 
 dbConfig
   .sync({ force: overrideDatabase })
