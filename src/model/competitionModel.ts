@@ -3,6 +3,7 @@ import { BuildOptions, DataTypes, Model, Sequelize } from "sequelize";
 export interface CompetitionAttributes {
   id: number;
   name: string;
+  weight: number;
 }
 
 export interface CompetitionModel
@@ -26,6 +27,10 @@ export function competitionFactory(sequelize: Sequelize): CompetitionStatic {
     },
     name: {
       type: DataTypes.STRING,
+      allowNull: false
+    },
+    weight: {
+      type: DataTypes.INTEGER.UNSIGNED,
       allowNull: false
     },
     createdAt: {

@@ -1,20 +1,29 @@
 import { CompetitionAttributes } from "../model/competitionModel";
-import { Competition } from "../model";
+import { Category, Competition, Result } from "../model";
+import { CategoryResult } from "../types/types";
 
 const debug = require("debug")("competition.service");
 
 export class CompetitionService {
-  create({ name }: CompetitionAttributes, transaction?) {
+  create({ name, weight }: CompetitionAttributes, transaction?) {
     return Competition.create(
       {
-        name
+        name,
+        weight
       },
       { transaction }
     );
   }
 
   getById(competitionId: number, transaction?) {
-    return Competition.findByPk(competitionId, { transaction });
+    return Competition.findByPk(competitionId, {
+      include: [
+        {
+          model: Category
+        }
+      ],
+      transaction
+    });
   }
 
   getAll(transaction?) {
@@ -30,6 +39,7 @@ export class CompetitionService {
     }
     await competition.destroy({ transaction });
   }
+
   update({ id, name }: CompetitionAttributes, transaction?) {
     return Competition.update(
       {
@@ -37,5 +47,19 @@ export class CompetitionService {
       },
       { where: { id }, transaction }
     );
+  }
+
+  addResults(
+    competitionId: number,
+    categoryId: number,
+    results: Array<CategoryResult>,
+    transaction?
+  ) {
+    results.forEach(({ playerId, place }) => {
+      Result.create(
+        { competitionId, categoryId, playerId, place },
+        transaction
+      );
+    });
   }
 }
