@@ -1,6 +1,5 @@
 require("dotenv").config();
 import { mockDb } from "./mock/mock-db";
-
 import { dbConfig } from "./model";
 const express = require("express");
 const bodyParser = require("body-parser");
