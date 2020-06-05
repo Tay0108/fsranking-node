@@ -1,4 +1,5 @@
 require("dotenv").config();
+import { mockDb } from "./mock/mock-db";
 import { dbConfig } from "./model";
 const express = require("express");
 const bodyParser = require("body-parser");
@@ -10,10 +11,14 @@ const overrideDatabase = process.env.DB_OVERRIDE === "true";
 
 dbConfig
   .sync({ force: overrideDatabase })
-  .then(() => console.log("connected to db"))
+  .then(() => {
+    console.log("connected to db");
+    if (process.env.DB_MOCK === "true") {
+      mockDb();
+    }
+  })
   .catch((error) => {
     console.log("sth is not yes", error);
-    throw "error";
   });
 
 const app = express();
@@ -22,7 +27,7 @@ const allowedOrigins: Array<string> = ["http://localhost:3000"];
 
 app.use(
   bodyParser.urlencoded({
-    extended: true,
+    extended: true
   })
 );
 app.use(bodyParser.json());
@@ -42,7 +47,7 @@ app.use(
         );
       }
       return callback(null, true);
-    },
+    }
   })
 );
 

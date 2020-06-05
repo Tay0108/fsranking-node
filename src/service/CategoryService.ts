@@ -8,7 +8,7 @@ export class CategoryService {
     return Category.create(
       {
         name,
-        gender
+        gender // Male, Female, Both
       },
       { transaction }
     );
