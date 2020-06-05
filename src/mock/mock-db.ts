@@ -107,7 +107,7 @@ export async function createNationalities() {
 }
 
 export async function createLocations() {
-  debug("creating nationalities starting...");
+  debug("creating locations starting...");
 
   await Location.create({
     name: "Lubasz",
