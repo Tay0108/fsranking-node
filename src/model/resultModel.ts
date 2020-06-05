@@ -20,28 +20,28 @@ export function resultFactory(sequelize: Sequelize): ResultStatic {
   return <ResultStatic>sequelize.define("results", {
     competitionId: {
       type: DataTypes.INTEGER.UNSIGNED,
-      primaryKey: true,
+      primaryKey: true
     },
     categoryId: {
       type: DataTypes.INTEGER.UNSIGNED,
-      primaryKey: true,
+      primaryKey: true
     },
     playerId: {
       type: DataTypes.INTEGER.UNSIGNED,
-      primaryKey: true,
+      primaryKey: true
     },
     place: {
-      type: DataTypes.INTEGER.UNSIGNED,
+      type: DataTypes.INTEGER.UNSIGNED
     },
     createdAt: {
       type: DataTypes.DATE,
       allowNull: false,
-      defaultValue: DataTypes.NOW,
+      defaultValue: DataTypes.NOW
     },
     updatedAt: {
       type: DataTypes.DATE,
       allowNull: false,
-      defaultValue: DataTypes.NOW,
-    },
+      defaultValue: DataTypes.NOW
+    }
   });
 }

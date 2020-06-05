@@ -24,37 +24,41 @@ export function playerFactory(sequelize: Sequelize): PlayerStatic {
     id: {
       type: DataTypes.INTEGER.UNSIGNED,
       autoIncrement: true,
-      primaryKey: true,
+      primaryKey: true
     },
     gender: {
       type: DataTypes.STRING,
-      allowNull: false,
+      allowNull: false
     },
     firstName: {
       type: DataTypes.STRING,
-      allowNull: false,
+      allowNull: false
     },
     lastName: {
       type: DataTypes.STRING,
-      allowNull: false,
+      allowNull: false
     },
     nickname: {
       type: DataTypes.STRING,
-      allowNull: false,
+      allowNull: true
     },
     age: {
       type: DataTypes.INTEGER.UNSIGNED,
-      allowNull: true,
+      allowNull: true
+    },
+    careerStartYear: {
+      type: DataTypes.INTEGER.UNSIGNED,
+      allowNull: true
     },
     createdAt: {
       type: DataTypes.DATE,
       allowNull: false,
-      defaultValue: DataTypes.NOW,
+      defaultValue: DataTypes.NOW
     },
     updatedAt: {
       type: DataTypes.DATE,
       allowNull: false,
-      defaultValue: DataTypes.NOW,
-    },
+      defaultValue: DataTypes.NOW
+    }
   });
 }

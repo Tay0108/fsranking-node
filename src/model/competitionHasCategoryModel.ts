@@ -17,8 +17,7 @@ export type CompetitionHasCategoryStatic = typeof Model & {
 export function competitionHasCategoryFactory(
   sequelize: Sequelize
 ): CompetitionHasCategoryStatic {
-  return <CompetitionHasCategoryStatic>sequelize.define(
-    "competitions_have_categories",
-    {}
+  return <CompetitionHasCategoryStatic>(
+    sequelize.define("competitions_have_categories", {})
   );
 }

@@ -23,29 +23,29 @@ export function socialMediaFactory(sequelize: Sequelize): SocialMediaStatic {
   return <SocialMediaStatic>sequelize.define("social_media", {
     playerId: {
       type: DataTypes.INTEGER.UNSIGNED,
-      primaryKey: true,
+      primaryKey: true
     },
     facebookUrl: {
       type: DataTypes.STRING,
-      allowNull: true,
+      allowNull: true
     },
     instagramUrl: {
       type: DataTypes.STRING,
-      allowNull: true,
+      allowNull: true
     },
     youtubeUrl: {
       type: DataTypes.STRING,
-      allowNull: true,
+      allowNull: true
     },
     createdAt: {
       type: DataTypes.DATE,
       allowNull: false,
-      defaultValue: DataTypes.NOW,
+      defaultValue: DataTypes.NOW
     },
     updatedAt: {
       type: DataTypes.DATE,
       allowNull: false,
-      defaultValue: DataTypes.NOW,
-    },
+      defaultValue: DataTypes.NOW
+    }
   });
 }
