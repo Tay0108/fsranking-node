@@ -3,6 +3,7 @@ import {
   Competition,
   Location,
   Nationality,
+  PlaceToPoints,
   Player,
   Result
 } from "../model";
@@ -1889,7 +1890,7 @@ export async function createResults() {
   await Result.create({
     competitionId: 32,
     categoryId: 3,
-    playerId : 30,
+    playerId: 30,
     place: 8
   });
   // Bytom 2014:
@@ -2841,8 +2842,45 @@ export async function createResults() {
   });
 }
 
+export async function createPlaceToPoints() {
+  debug("creating place to points starting...");
+
+  await PlaceToPoints.create({
+    place: 1,
+    points: 125
+  });
+  await PlaceToPoints.create({
+    place: 2,
+    points: 75
+  });
+  await PlaceToPoints.create({
+    place: 3,
+    points: 55
+  });
+  await PlaceToPoints.create({
+    place: 4,
+    points: 45
+  });
+  await PlaceToPoints.create({
+    place: 5,
+    points: 25
+  });
+  await PlaceToPoints.create({
+    place: 6,
+    points: 25
+  });
+  await PlaceToPoints.create({
+    place: 7,
+    points: 25
+  });
+  await PlaceToPoints.create({
+    place: 8,
+    points: 25
+  });
+}
 
 export async function mockDb() {
+  await createPlaceToPoints();
   await createNationalities();
   await createLocations();
   await createPlayers();
