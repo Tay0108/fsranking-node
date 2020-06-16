@@ -11,13 +11,15 @@ export interface PlaceToPointsModel
 export class PlaceToPointsModel extends Model<
   PlaceToPointsModel,
   PlaceToPointsAttributes
-  > {}
+> {}
 
 export type PlaceToPointsStatic = typeof Model & {
   new (values?: object, options?: BuildOptions): PlaceToPointsModel;
 };
 
-export function placeToPointsFactory(sequelize: Sequelize): PlaceToPointsStatic {
+export function placeToPointsFactory(
+  sequelize: Sequelize
+): PlaceToPointsStatic {
   return <PlaceToPointsStatic>sequelize.define("place_to_points", {
     place: {
       type: DataTypes.INTEGER.UNSIGNED,
