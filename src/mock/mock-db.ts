@@ -448,7 +448,7 @@ export async function createCompetitions() {
   });
   await Competition.create({
     name: "Olkusz 2008",
-    weight: 4,
+    weight: 3,
     date: new Date(2008, 0, 1)
   });
   await Competition.create({
@@ -458,22 +458,22 @@ export async function createCompetitions() {
   });
   await Competition.create({
     name: "Zawiercie 2008",
-    weight: 4,
+    weight: 6,
     date: new Date(2008, 0, 1)
   });
   await Competition.create({
     name: "Jaktorów 2009",
-    weight: 4,
+    weight: 2,
     date: new Date(2009, 0, 1)
   });
   await Competition.create({
     name: "Kielce 2009",
-    weight: 4,
+    weight: 2,
     date: new Date(2009, 0, 1)
   });
   await Competition.create({
     name: "Olkusz 2009",
-    weight: 4,
+    weight: 3,
     date: new Date(2009, 0, 1)
   });
   await Competition.create({
@@ -483,37 +483,37 @@ export async function createCompetitions() {
   });
   await Competition.create({
     name: "RBSS 2009",
-    weight: 4,
+    weight: 6,
     date: new Date(2009, 0, 1)
   });
   await Competition.create({
     name: "Zawiercie 2009",
-    weight: 4,
+    weight: 2,
     date: new Date(2009, 0, 1)
   });
   await Competition.create({
     name: "Cieszyn 2010",
-    weight: 4,
+    weight: 6,
     date: new Date(2010, 0, 1)
   });
   await Competition.create({
     name: "Jarocin 2010",
-    weight: 4,
+    weight: 5,
     date: new Date(2010, 0, 1)
   });
   await Competition.create({
     name: "Łódź 2010",
-    weight: 4,
+    weight: 2,
     date: new Date(2010, 0, 1)
   });
   await Competition.create({
     name: "Międzyzdroje 2010",
-    weight: 4,
+    weight: 1,
     date: new Date(2010, 0, 1)
   });
   await Competition.create({
     name: "Olkusz 2010",
-    weight: 4,
+    weight: 3,
     date: new Date(2010, 0, 1)
   });
   await Competition.create({
@@ -523,67 +523,67 @@ export async function createCompetitions() {
   });
   await Competition.create({
     name: "Focus 2011",
-    weight: 4,
+    weight: 5,
     date: new Date(2011, 0, 1)
   });
   await Competition.create({
     name: "Grassroots 2011",
-    weight: 4,
+    weight: 2,
     date: new Date(2011, 0, 1)
   });
   await Competition.create({
     name: "Międzyzdroje 2011",
-    weight: 4,
+    weight: 1,
     date: new Date(2011, 0, 1)
   });
   await Competition.create({
     name: "Myszków 2011",
-    weight: 4,
+    weight: 6,
     date: new Date(2011, 0, 1)
   });
   await Competition.create({
     name: "Pabianice 2011",
-    weight: 4,
+    weight: 1,
     date: new Date(2011, 0, 1)
   });
   await Competition.create({
     name: "Żerków 2011",
-    weight: 4,
+    weight: 5,
     date: new Date(2011, 0, 1)
   });
   await Competition.create({
     name: "Bytów 2012",
-    weight: 4,
+    weight: 2,
     date: new Date(2012, 0, 1)
   });
   await Competition.create({
     name: "Focus 2012",
-    weight: 4,
+    weight: 5,
     date: new Date(2012, 0, 1)
   });
   await Competition.create({
     name: "Myszków 2012",
-    weight: 4,
+    weight: 6,
     date: new Date(2012, 0, 1)
   });
   await Competition.create({
     name: "RBSS 2012",
-    weight: 4,
+    weight: 5,
     date: new Date(2012, 0, 1)
   });
   await Competition.create({
     name: "Żerków 2012",
-    weight: 4,
+    weight: 5,
     date: new Date(2012, 0, 1)
   });
   await Competition.create({
     name: "Battlemasters Wrocław 2013",
-    weight: 4,
+    weight: 2,
     date: new Date(2013, 0, 1)
   });
   await Competition.create({
     name: "H&S 2013",
-    weight: 4,
+    weight: 6,
     date: new Date(2013, 0, 1)
   });
   await Competition.create({
@@ -593,117 +593,117 @@ export async function createCompetitions() {
   });
   await Competition.create({
     name: "Płock 2013",
-    weight: 4,
+    weight: 2,
     date: new Date(2013, 0, 1)
   });
   await Competition.create({
     name: "Żerków 2013",
-    weight: 4,
+    weight: 5,
     date: new Date(2013, 0, 1)
   });
   await Competition.create({
     name: "Bytom 2014",
-    weight: 4,
+    weight: 2,
     date: new Date(2014, 0, 1)
   });
   await Competition.create({
     name: "Czarnków 2014",
-    weight: 4,
+    weight: 2,
     date: new Date(2014, 0, 1)
   });
   await Competition.create({
     name: "Międzyzdroje 2014",
-    weight: 4,
+    weight: 1,
     date: new Date(2014, 0, 1)
   });
   await Competition.create({
     name: "Myszków 2014",
-    weight: 4,
+    weight: 6,
     date: new Date(2014, 0, 1)
   });
   await Competition.create({
     name: "Skawina 2014",
-    weight: 4,
+    weight: 3,
     date: new Date(2014, 0, 1)
   });
   await Competition.create({
     name: "Żerków 2014",
-    weight: 4,
+    weight: 5,
     date: new Date(2014, 0, 1)
   });
   await Competition.create({
     name: "Błaszki 2015",
-    weight: 4,
+    weight: 2,
     date: new Date(2015, 0, 1)
   });
   await Competition.create({
     name: "Bytom 2015",
-    weight: 4,
+    weight: 6,
     date: new Date(2015, 0, 1)
   });
   await Competition.create({
     name: "Czarnków 2015",
-    weight: 4,
+    weight: 2,
     date: new Date(2015, 0, 1)
   });
   await Competition.create({
     name: "Focus 2015",
-    weight: 4,
+    weight: 5,
     date: new Date(2015, 0, 1)
   });
   await Competition.create({
     name: "Gubin 2015",
-    weight: 4,
+    weight: 1,
     date: new Date(2015, 0, 1)
   });
   await Competition.create({
     name: "Lublin 2015",
-    weight: 4,
+    weight: 1,
     date: new Date(2015, 0, 1)
   });
   await Competition.create({
     name: "Międzyzdroje 2015",
-    weight: 4,
+    weight: 1,
     date: new Date(2015, 0, 1)
   });
   await Competition.create({
     name: "Przygodzice 2015",
-    weight: 4,
+    weight: 1,
     date: new Date(2015, 0, 1)
   });
   await Competition.create({
     name: "Skawina 2015",
-    weight: 4,
+    weight: 3,
     date: new Date(2015, 0, 1)
   });
   await Competition.create({
     name: "Żerków 2015",
-    weight: 4,
+    weight: 5,
     date: new Date(2015, 0, 1)
   });
   await Competition.create({
     name: "Błaszki 2016",
-    weight: 4,
+    weight: 2,
     date: new Date(2016, 0, 1)
   });
   await Competition.create({
     name: "Bytom M1 2016",
-    weight: 4,
+    weight: 1,
     date: new Date(2016, 0, 1)
   });
   await Competition.create({
     name: "Częstochowa M1 2016",
-    weight: 4,
+    weight: 1,
     date: new Date(2016, 0, 1)
   });
   await Competition.create({
     name: "Focus 2016",
-    weight: 4,
+    weight: 5,
     date: new Date(2016, 0, 1)
   });
   await Competition.create({
     name: "Gubin 2016",
-    weight: 4,
+    weight: 1,
     date: new Date(2016, 0, 1)
   });
   await Competition.create({
@@ -713,67 +713,67 @@ export async function createCompetitions() {
   });
   await Competition.create({
     name: "Lublin 2016",
-    weight: 4,
+    weight: 1,
     date: new Date(2016, 0, 1)
   });
   await Competition.create({
     name: "Marki M1 2016",
-    weight: 4,
+    weight: 1,
     date: new Date(2016, 0, 1)
   });
   await Competition.create({
     name: "Olkusz 2016",
-    weight: 4,
+    weight: 6,
     date: new Date(2016, 0, 1)
   });
   await Competition.create({
     name: "Radom M1 2016",
-    weight: 4,
+    weight: 1,
     date: new Date(2016, 0, 1)
   });
   await Competition.create({
     name: "Skawina 2016",
-    weight: 4,
+    weight: 3,
     date: new Date(2016, 0, 1)
   });
   await Competition.create({
     name: "Zabrze M1 2016",
-    weight: 4,
+    weight: 1,
     date: new Date(2016, 0, 1)
   });
   await Competition.create({
     name: "Żerków 2016",
-    weight: 4,
+    weight: 5,
     date: new Date(2016, 0, 1)
   });
   await Competition.create({
     name: "Błaszki 2017",
-    weight: 4,
+    weight: 2,
     date: new Date(2017, 0, 1)
   });
   await Competition.create({
     name: "Chojnice 2017",
-    weight: 4,
+    weight: 1,
     date: new Date(2017, 0, 1)
   });
   await Competition.create({
     name: "Focus 2017",
-    weight: 4,
+    weight: 5,
     date: new Date(2017, 0, 1)
   });
   await Competition.create({
     name: "Freestival 2017",
-    weight: 4,
+    weight: 5,
     date: new Date(2017, 0, 1)
   });
   await Competition.create({
     name: "Olkusz 2017",
-    weight: 4,
+    weight: 6,
     date: new Date(2017, 0, 1)
   });
   await Competition.create({
     name: "Skawina 2017",
-    weight: 4,
+    weight: 3,
     date: new Date(2017, 0, 1)
   });
 }
