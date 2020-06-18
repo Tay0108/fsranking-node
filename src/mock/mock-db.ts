@@ -803,138 +803,138 @@ export async function createLocations() {
 
   await Location.create({
     name: "Zawiercie",
-    latitude: 1,
-    longitude: 1
+    latitude: 50.5054104,
+    longitude: 19.3992064
   });
   await Location.create({
     name: "Olkusz",
-    latitude: 1,
-    longitude: 1
+    latitude: 50.2857114,
+    longitude: 19.526675
   });
   await Location.create({
     name: "Pyrzyce",
-    latitude: 1,
-    longitude: 1
+    latitude: 53.1423448,
+    longitude: 14.8574648
   });
   await Location.create({
     name: "Jaktorów",
-    latitude: 1,
-    longitude: 1
+    latitude: 52.0839776,
+    longitude: 20.5359227
   });
   await Location.create({
     name: "Kielce",
-    latitude: 1,
-    longitude: 1
+    latitude: 50.8540189,
+    longitude: 20.5454304
   });
   await Location.create({
     name: "Warszawa",
-    latitude: 1,
-    longitude: 1
+    latitude: 52.2328546,
+    longitude: 20.9207696
   });
   await Location.create({
     name: "Cieszyn",
-    latitude: 1,
-    longitude: 1
+    latitude: 49.7557804,
+    longitude: 18.6151379
   });
   await Location.create({
     name: "Jarocin",
-    latitude: 1,
-    longitude: 1
+    latitude: 51.9615501,
+    longitude: 17.4724849
   });
   await Location.create({
     name: "Łódź",
-    latitude: 1,
-    longitude: 1
+    latitude: 51.773097,
+    longitude: 19.4103816
   });
   await Location.create({
     name: "Międzyzdroje",
-    latitude: 1,
-    longitude: 1
+    latitude: 53.9257449,
+    longitude: 14.419075
   });
   await Location.create({
     name: "Bydgoszcz",
-    latitude: 1,
-    longitude: 1
+    latitude: 53.1256665,
+    longitude: 17.9679715
   });
   await Location.create({
     name: "Pabianice",
-    latitude: 1,
-    longitude: 1
+    latitude: 51.6661031,
+    longitude: 19.3196791
   });
   await Location.create({
     name: "Bytów",
-    latitude: 1,
-    longitude: 1
+    latitude: 54.1798532,
+    longitude: 17.4655113
   });
   await Location.create({
     name: "Płock",
-    latitude: 1,
-    longitude: 1
+    latitude: 52.5353854,
+    longitude: 19.6448352
   });
   await Location.create({
     name: "Bytom",
-    latitude: 1,
-    longitude: 1
+    latitude: 50.3650716,
+    longitude: 18.8064486
   });
   await Location.create({
     name: "Czarnków",
-    latitude: 1,
-    longitude: 1
+    latitude: 52.9010141,
+    longitude: 16.5406719
   });
   await Location.create({
     name: "Skawina",
-    latitude: 1,
-    longitude: 1
+    latitude: 49.9735749,
+    longitude: 19.8074803
   });
   await Location.create({
     name: "Błaszki",
-    latitude: 1,
-    longitude: 1
+    latitude: 51.6523097,
+    longitude: 18.4340231
   });
   await Location.create({
     name: "Gubin",
-    latitude: 1,
-    longitude: 1
+    latitude: 51.9572149,
+    longitude: 14.7141162
   });
   await Location.create({
     name: "Lublin",
-    latitude: 1,
-    longitude: 1
+    latitude: 51.218088,
+    longitude: 22.4935593
   });
   await Location.create({
     name: "Przygodzice",
-    latitude: 1,
-    longitude: 1
+    latitude: 51.5963727,
+    longitude: 17.8107978
   });
   await Location.create({
     name: "Częstochowa",
-    latitude: 1,
-    longitude: 1
+    latitude: 50.8092996,
+    longitude: 19.0525602
   });
   await Location.create({
     name: "Marki",
-    latitude: 1,
-    longitude: 1
+    latitude: 52.337067,
+    longitude: 21.0848871
   });
   await Location.create({
     name: "Radom",
-    latitude: 1,
-    longitude: 1
+    latitude: 51.4150446,
+    longitude: 21.083763
   });
   await Location.create({
     name: "Zabrze",
-    latitude: 1,
-    longitude: 1
+    latitude: 50.3149192,
+    longitude: 18.7264394
   });
   await Location.create({
     name: "Chojnice",
-    latitude: 1,
-    longitude: 1
+    latitude: 53.7000897,
+    longitude: 17.5226015
   });
   await Location.create({
     name: "Grodzisk Mazowiecki",
-    latitude: 1,
-    longitude: 1
+    latitude: 52.1050774,
+    longitude: 20.6155303
   });
   await Location.create({
     name: "Lubasz",
