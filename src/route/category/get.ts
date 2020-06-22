@@ -22,7 +22,7 @@ const categoryRoutes = {
     } catch (error) {
       debug(error);
     }
-  },
+  }
 };
 
 export const getCategory = (app) => {

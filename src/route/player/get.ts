@@ -22,7 +22,7 @@ const playerRoutes = {
     } catch (error) {
       debug(error);
     }
-  },
+  }
 };
 
 export const getPlayer = (app) => {

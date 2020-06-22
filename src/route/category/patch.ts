@@ -14,8 +14,7 @@ const categoryRoutes = {
     try {
       category = await dbConfig.transaction(async (transaction) => {
         const categoryFound =
-          (await categoryService.getById(categoryId, transaction)) !==
-          null;
+          (await categoryService.getById(categoryId, transaction)) !== null;
 
         if (!categoryFound) {
           throw new Error("Category not found");

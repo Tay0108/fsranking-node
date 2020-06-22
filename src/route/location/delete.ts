@@ -18,7 +18,7 @@ const locationRoutes = {
       debug(error);
       return res.sendStatus(500);
     }
-  },
+  }
 };
 
 export const deleteLocation = (app) => {

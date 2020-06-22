@@ -13,10 +13,9 @@ const locationRoutes = {
       debug(error);
       return res.sendStatus(500);
     }
-  },
+  }
 };
 
 export const postLocation = (app) => {
   app.post("/location", locationRoutes.post);
 };
-

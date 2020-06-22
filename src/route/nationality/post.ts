@@ -13,10 +13,9 @@ const nationalityRoutes = {
       debug(error);
       return res.sendStatus(500);
     }
-  },
+  }
 };
 
 export const postNationality = (app) => {
   app.post("/nationality", nationalityRoutes.post);
 };
-

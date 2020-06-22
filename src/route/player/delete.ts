@@ -18,7 +18,7 @@ const playerRoutes = {
       debug(error);
       return res.sendStatus(500);
     }
-  },
+  }
 };
 
 export const deletePlayer = (app) => {

@@ -13,10 +13,9 @@ const categoryRoutes = {
       debug(error);
       return res.sendStatus(500);
     }
-  },
+  }
 };
 
 export const postCategory = (app) => {
   app.post("/category", categoryRoutes.post);
 };
-

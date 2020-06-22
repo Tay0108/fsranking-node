@@ -13,13 +13,18 @@ const nationalityRoutes = {
 
     try {
       nationality = await dbConfig.transaction(async (transaction) => {
-        const nationalityFound = await nationalityService.getById(nationalityId, transaction) !== null;
+        const nationalityFound =
+          (await nationalityService.getById(nationalityId, transaction)) !==
+          null;
 
         if (!nationalityFound) {
           throw new Error("Nationality not found");
         }
 
-        await nationalityService.update({ id: nationalityId, ...req.body }, transaction);
+        await nationalityService.update(
+          { id: nationalityId, ...req.body },
+          transaction
+        );
 
         return nationalityService.getById(nationalityId, transaction);
       });

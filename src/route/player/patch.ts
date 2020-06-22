@@ -13,7 +13,8 @@ const playerRoutes = {
 
     try {
       player = await dbConfig.transaction(async (transaction) => {
-        const playerFound = await playerService.getById(playerId, transaction) !== null;
+        const playerFound =
+          (await playerService.getById(playerId, transaction)) !== null;
 
         if (!playerFound) {
           throw new Error("Player not found");
