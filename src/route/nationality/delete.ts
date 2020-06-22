@@ -18,7 +18,7 @@ const nationalityRoutes = {
       debug(error);
       return res.sendStatus(500);
     }
-  },
+  }
 };
 
 export const deleteNationality = (app) => {

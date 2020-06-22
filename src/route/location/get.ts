@@ -22,7 +22,7 @@ const locationRoutes = {
     } catch (error) {
       debug(error);
     }
-  },
+  }
 };
 
 export const getLocation = (app) => {

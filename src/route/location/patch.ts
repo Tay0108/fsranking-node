@@ -13,13 +13,17 @@ const locationRoutes = {
 
     try {
       location = await dbConfig.transaction(async (transaction) => {
-        const locationFound = await locationService.getById(locationId, transaction) !== null;
+        const locationFound =
+          (await locationService.getById(locationId, transaction)) !== null;
 
         if (!locationFound) {
           throw new Error("Location not found");
         }
 
-        await locationService.update({ id: locationId, ...req.body }, transaction);
+        await locationService.update(
+          { id: locationId, ...req.body },
+          transaction
+        );
 
         return locationService.getById(locationId, transaction);
       });

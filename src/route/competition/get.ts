@@ -22,7 +22,7 @@ const competitionRoutes = {
     } catch (error) {
       debug(error);
     }
-  },
+  }
 };
 
 export const getCompetition = (app) => {

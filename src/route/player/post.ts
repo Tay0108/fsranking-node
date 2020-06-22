@@ -13,10 +13,9 @@ const playerRoutes = {
       debug(error);
       return res.sendStatus(500);
     }
-  },
+  }
 };
 
 export const postPlayer = (app) => {
   app.post("/player", playerRoutes.post);
 };
-

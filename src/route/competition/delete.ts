@@ -18,7 +18,7 @@ const competitionRoutes = {
       debug(error);
       return res.sendStatus(500);
     }
-  },
+  }
 };
 
 export const deleteCompetition = (app) => {

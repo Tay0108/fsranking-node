@@ -22,7 +22,7 @@ const nationalityRoutes = {
     } catch (error) {
       debug(error);
     }
-  },
+  }
 };
 
 export const getNationality = (app) => {
