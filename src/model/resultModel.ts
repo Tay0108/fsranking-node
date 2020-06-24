@@ -1,7 +1,7 @@
 import { BuildOptions, DataTypes, Model, Sequelize } from "sequelize";
 
 export interface ResultAttributes {
-  competitionId: number;
+  tournamentId: number;
   categoryId: number;
   playerId: number;
   place: number;
@@ -18,7 +18,7 @@ export type ResultStatic = typeof Model & {
 
 export function resultFactory(sequelize: Sequelize): ResultStatic {
   return <ResultStatic>sequelize.define("results", {
-    competitionId: {
+    tournamentId: {
       type: DataTypes.INTEGER.UNSIGNED,
       primaryKey: true
     },
