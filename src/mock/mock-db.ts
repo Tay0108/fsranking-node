@@ -1,6 +1,6 @@
 import {
   Category,
-  Competition,
+  Tournament,
   Location,
   Nationality,
   PlaceToPoints,
@@ -438,340 +438,340 @@ export async function createCategories() {
   });
 }
 
-export async function createCompetitions() {
-  debug("creating competitions starting...");
+export async function createTournaments() {
+  debug("creating tournaments starting...");
   // real data:
-  await Competition.create({
+  await Tournament.create({
     name: "Zawiercie 2007",
     weight: 6, // MP
     date: new Date(2007, 0, 1)
   });
-  await Competition.create({
+  await Tournament.create({
     name: "Olkusz 2008",
     weight: 3,
     date: new Date(2008, 0, 1)
   });
-  await Competition.create({
+  await Tournament.create({
     name: "Pyrzyce 2008",
     weight: 4,
     date: new Date(2008, 0, 1)
   });
-  await Competition.create({
+  await Tournament.create({
     name: "Zawiercie 2008",
     weight: 6,
     date: new Date(2008, 0, 1)
   });
-  await Competition.create({
+  await Tournament.create({
     name: "Jaktorów 2009",
     weight: 2,
     date: new Date(2009, 0, 1)
   });
-  await Competition.create({
+  await Tournament.create({
     name: "Kielce 2009",
     weight: 2,
     date: new Date(2009, 0, 1)
   });
-  await Competition.create({
+  await Tournament.create({
     name: "Olkusz 2009",
     weight: 3,
     date: new Date(2009, 0, 1)
   });
-  await Competition.create({
+  await Tournament.create({
     name: "Pyrzyce 2009",
     weight: 4,
     date: new Date(2009, 0, 1)
   });
-  await Competition.create({
+  await Tournament.create({
     name: "RBSS 2009",
     weight: 6,
     date: new Date(2009, 0, 1)
   });
-  await Competition.create({
+  await Tournament.create({
     name: "Zawiercie 2009",
     weight: 2,
     date: new Date(2009, 0, 1)
   });
-  await Competition.create({
+  await Tournament.create({
     name: "Cieszyn 2010",
     weight: 6,
     date: new Date(2010, 0, 1)
   });
-  await Competition.create({
+  await Tournament.create({
     name: "Jarocin 2010",
     weight: 5,
     date: new Date(2010, 0, 1)
   });
-  await Competition.create({
+  await Tournament.create({
     name: "Łódź 2010",
     weight: 2,
     date: new Date(2010, 0, 1)
   });
-  await Competition.create({
+  await Tournament.create({
     name: "Międzyzdroje 2010",
     weight: 1,
     date: new Date(2010, 0, 1)
   });
-  await Competition.create({
+  await Tournament.create({
     name: "Olkusz 2010",
     weight: 3,
     date: new Date(2010, 0, 1)
   });
-  await Competition.create({
+  await Tournament.create({
     name: "Pyrzyce 2010",
     weight: 4,
     date: new Date(2010, 0, 1)
   });
-  await Competition.create({
+  await Tournament.create({
     name: "Focus 2011",
     weight: 5,
     date: new Date(2011, 0, 1)
   });
-  await Competition.create({
+  await Tournament.create({
     name: "Grassroots 2011",
     weight: 2,
     date: new Date(2011, 0, 1)
   });
-  await Competition.create({
+  await Tournament.create({
     name: "Międzyzdroje 2011",
     weight: 1,
     date: new Date(2011, 0, 1)
   });
-  await Competition.create({
+  await Tournament.create({
     name: "Myszków 2011",
     weight: 6,
     date: new Date(2011, 0, 1)
   });
-  await Competition.create({
+  await Tournament.create({
     name: "Pabianice 2011",
     weight: 1,
     date: new Date(2011, 0, 1)
   });
-  await Competition.create({
+  await Tournament.create({
     name: "Żerków 2011",
     weight: 5,
     date: new Date(2011, 0, 1)
   });
-  await Competition.create({
+  await Tournament.create({
     name: "Bytów 2012",
     weight: 2,
     date: new Date(2012, 0, 1)
   });
-  await Competition.create({
+  await Tournament.create({
     name: "Focus 2012",
     weight: 5,
     date: new Date(2012, 0, 1)
   });
-  await Competition.create({
+  await Tournament.create({
     name: "Myszków 2012",
     weight: 6,
     date: new Date(2012, 0, 1)
   });
-  await Competition.create({
+  await Tournament.create({
     name: "RBSS 2012",
     weight: 5,
     date: new Date(2012, 0, 1)
   });
-  await Competition.create({
+  await Tournament.create({
     name: "Żerków 2012",
     weight: 5,
     date: new Date(2012, 0, 1)
   });
-  await Competition.create({
+  await Tournament.create({
     name: "Battlemasters Wrocław 2013",
     weight: 2,
     date: new Date(2013, 0, 1)
   });
-  await Competition.create({
+  await Tournament.create({
     name: "H&S 2013",
     weight: 6,
     date: new Date(2013, 0, 1)
   });
-  await Competition.create({
+  await Tournament.create({
     name: "LFN 2013",
     weight: 4,
     date: new Date(2013, 0, 1)
   });
-  await Competition.create({
+  await Tournament.create({
     name: "Płock 2013",
     weight: 2,
     date: new Date(2013, 0, 1)
   });
-  await Competition.create({
+  await Tournament.create({
     name: "Żerków 2013",
     weight: 5,
     date: new Date(2013, 0, 1)
   });
-  await Competition.create({
+  await Tournament.create({
     name: "Bytom 2014",
     weight: 2,
     date: new Date(2014, 0, 1)
   });
-  await Competition.create({
+  await Tournament.create({
     name: "Czarnków 2014",
     weight: 2,
     date: new Date(2014, 0, 1)
   });
-  await Competition.create({
+  await Tournament.create({
     name: "Międzyzdroje 2014",
     weight: 1,
     date: new Date(2014, 0, 1)
   });
-  await Competition.create({
+  await Tournament.create({
     name: "Myszków 2014",
     weight: 6,
     date: new Date(2014, 0, 1)
   });
-  await Competition.create({
+  await Tournament.create({
     name: "Skawina 2014",
     weight: 3,
     date: new Date(2014, 0, 1)
   });
-  await Competition.create({
+  await Tournament.create({
     name: "Żerków 2014",
     weight: 5,
     date: new Date(2014, 0, 1)
   });
-  await Competition.create({
+  await Tournament.create({
     name: "Błaszki 2015",
     weight: 2,
     date: new Date(2015, 0, 1)
   });
-  await Competition.create({
+  await Tournament.create({
     name: "Bytom 2015",
     weight: 6,
     date: new Date(2015, 0, 1)
   });
-  await Competition.create({
+  await Tournament.create({
     name: "Czarnków 2015",
     weight: 2,
     date: new Date(2015, 0, 1)
   });
-  await Competition.create({
+  await Tournament.create({
     name: "Focus 2015",
     weight: 5,
     date: new Date(2015, 0, 1)
   });
-  await Competition.create({
+  await Tournament.create({
     name: "Gubin 2015",
     weight: 1,
     date: new Date(2015, 0, 1)
   });
-  await Competition.create({
+  await Tournament.create({
     name: "Lublin 2015",
     weight: 1,
     date: new Date(2015, 0, 1)
   });
-  await Competition.create({
+  await Tournament.create({
     name: "Międzyzdroje 2015",
     weight: 1,
     date: new Date(2015, 0, 1)
   });
-  await Competition.create({
+  await Tournament.create({
     name: "Przygodzice 2015",
     weight: 1,
     date: new Date(2015, 0, 1)
   });
-  await Competition.create({
+  await Tournament.create({
     name: "Skawina 2015",
     weight: 3,
     date: new Date(2015, 0, 1)
   });
-  await Competition.create({
+  await Tournament.create({
     name: "Żerków 2015",
     weight: 5,
     date: new Date(2015, 0, 1)
   });
-  await Competition.create({
+  await Tournament.create({
     name: "Błaszki 2016",
     weight: 2,
     date: new Date(2016, 0, 1)
   });
-  await Competition.create({
+  await Tournament.create({
     name: "Bytom M1 2016",
     weight: 1,
     date: new Date(2016, 0, 1)
   });
-  await Competition.create({
+  await Tournament.create({
     name: "Częstochowa M1 2016",
     weight: 1,
     date: new Date(2016, 0, 1)
   });
-  await Competition.create({
+  await Tournament.create({
     name: "Focus 2016",
     weight: 5,
     date: new Date(2016, 0, 1)
   });
-  await Competition.create({
+  await Tournament.create({
     name: "Gubin 2016",
     weight: 1,
     date: new Date(2016, 0, 1)
   });
-  await Competition.create({
+  await Tournament.create({
     name: "LFN 2016",
     weight: 4,
     date: new Date(2016, 0, 1)
   });
-  await Competition.create({
+  await Tournament.create({
     name: "Lublin 2016",
     weight: 1,
     date: new Date(2016, 0, 1)
   });
-  await Competition.create({
+  await Tournament.create({
     name: "Marki M1 2016",
     weight: 1,
     date: new Date(2016, 0, 1)
   });
-  await Competition.create({
+  await Tournament.create({
     name: "Olkusz 2016",
     weight: 6,
     date: new Date(2016, 0, 1)
   });
-  await Competition.create({
+  await Tournament.create({
     name: "Radom M1 2016",
     weight: 1,
     date: new Date(2016, 0, 1)
   });
-  await Competition.create({
+  await Tournament.create({
     name: "Skawina 2016",
     weight: 3,
     date: new Date(2016, 0, 1)
   });
-  await Competition.create({
+  await Tournament.create({
     name: "Zabrze M1 2016",
     weight: 1,
     date: new Date(2016, 0, 1)
   });
-  await Competition.create({
+  await Tournament.create({
     name: "Żerków 2016",
     weight: 5,
     date: new Date(2016, 0, 1)
   });
-  await Competition.create({
+  await Tournament.create({
     name: "Błaszki 2017",
     weight: 2,
     date: new Date(2017, 0, 1)
   });
-  await Competition.create({
+  await Tournament.create({
     name: "Chojnice 2017",
     weight: 1,
     date: new Date(2017, 0, 1)
   });
-  await Competition.create({
+  await Tournament.create({
     name: "Focus 2017",
     weight: 5,
     date: new Date(2017, 0, 1)
   });
-  await Competition.create({
+  await Tournament.create({
     name: "Freestival 2017",
     weight: 5,
     date: new Date(2017, 0, 1)
   });
-  await Competition.create({
+  await Tournament.create({
     name: "Olkusz 2017",
     weight: 6,
     date: new Date(2017, 0, 1)
   });
-  await Competition.create({
+  await Tournament.create({
     name: "Skawina 2017",
     weight: 3,
     date: new Date(2017, 0, 1)
@@ -957,1885 +957,1885 @@ export async function createResults() {
   debug("creating results starting...");
   // Zawiercie 2007:
   await Result.create({
-    competitionId: 1,
+    tournamentId: 1,
     categoryId: 3,
     playerId: 1,
     place: 1
   });
   await Result.create({
-    competitionId: 1,
+    tournamentId: 1,
     categoryId: 3,
     playerId: 2,
     place: 2
   });
   await Result.create({
-    competitionId: 1,
+    tournamentId: 1,
     categoryId: 3,
     playerId: 3,
     place: 3
   });
   await Result.create({
-    competitionId: 1,
+    tournamentId: 1,
     categoryId: 3,
     playerId: 4,
     place: 4
   });
   // Olkusz 2008:
   await Result.create({
-    competitionId: 2,
+    tournamentId: 2,
     categoryId: 3,
     playerId: 5,
     place: 1
   });
   await Result.create({
-    competitionId: 2,
+    tournamentId: 2,
     categoryId: 3,
     playerId: 1,
     place: 2
   });
   await Result.create({
-    competitionId: 2,
+    tournamentId: 2,
     categoryId: 3,
     playerId: 6,
     place: 3
   });
   // Pyrzyce 2008:
   await Result.create({
-    competitionId: 3,
+    tournamentId: 3,
     categoryId: 3,
     playerId: 6,
     place: 1
   });
   await Result.create({
-    competitionId: 3,
+    tournamentId: 3,
     categoryId: 3,
     playerId: 2,
     place: 2
   });
   await Result.create({
-    competitionId: 3,
+    tournamentId: 3,
     categoryId: 3,
     playerId: 1,
     place: 3
   });
   // Zawiercie 2008:
   await Result.create({
-    competitionId: 4,
+    tournamentId: 4,
     categoryId: 3,
     playerId: 2,
     place: 1
   });
   await Result.create({
-    competitionId: 4,
+    tournamentId: 4,
     categoryId: 3,
     playerId: 7,
     place: 2
   });
   await Result.create({
-    competitionId: 4,
+    tournamentId: 4,
     categoryId: 3,
     playerId: 3,
     place: 3
   });
   // Jaktorów 2009:
   await Result.create({
-    competitionId: 5,
+    tournamentId: 5,
     categoryId: 3,
     playerId: 2,
     place: 1
   });
   await Result.create({
-    competitionId: 5,
+    tournamentId: 5,
     categoryId: 3,
     playerId: 7,
     place: 2
   });
   await Result.create({
-    competitionId: 5,
+    tournamentId: 5,
     categoryId: 3,
     playerId: 8,
     place: 3
   });
   // Kielce 2009:
   await Result.create({
-    competitionId: 6,
+    tournamentId: 6,
     categoryId: 3,
     playerId: 2,
     place: 1
   });
   await Result.create({
-    competitionId: 6,
+    tournamentId: 6,
     categoryId: 3,
     playerId: 7,
     place: 2
   });
   await Result.create({
-    competitionId: 6,
+    tournamentId: 6,
     categoryId: 3,
     playerId: 3,
     place: 3
   });
   // Olkusz 2009:
   await Result.create({
-    competitionId: 7,
+    tournamentId: 7,
     categoryId: 3,
     playerId: 7,
     place: 1
   });
   await Result.create({
-    competitionId: 7,
+    tournamentId: 7,
     categoryId: 3,
     playerId: 8,
     place: 2
   });
   await Result.create({
-    competitionId: 7,
+    tournamentId: 7,
     categoryId: 3,
     playerId: 9,
     place: 3
   });
   // Pyrzyce 2009:
   await Result.create({
-    competitionId: 8,
+    tournamentId: 8,
     categoryId: 3,
     playerId: 6,
     place: 3
   });
   // RBSS 2009:
   await Result.create({
-    competitionId: 9,
+    tournamentId: 9,
     categoryId: 3,
     playerId: 10,
     place: 1
   });
   await Result.create({
-    competitionId: 9,
+    tournamentId: 9,
     categoryId: 3,
     playerId: 2,
     place: 2
   });
   await Result.create({
-    competitionId: 9,
+    tournamentId: 9,
     categoryId: 3,
     playerId: 1,
     place: 3
   });
   await Result.create({
-    competitionId: 9,
+    tournamentId: 9,
     categoryId: 3,
     playerId: 11,
     place: 4
   });
   await Result.create({
-    competitionId: 9,
+    tournamentId: 9,
     categoryId: 3,
     playerId: 6,
     place: 5
   });
   await Result.create({
-    competitionId: 9,
+    tournamentId: 9,
     categoryId: 3,
     playerId: 3,
     place: 6
   });
   await Result.create({
-    competitionId: 9,
+    tournamentId: 9,
     categoryId: 3,
     playerId: 7,
     place: 7
   });
   await Result.create({
-    competitionId: 9,
+    tournamentId: 9,
     categoryId: 3,
     playerId: 4,
     place: 8
   });
   // Zawiercie 2009:
   await Result.create({
-    competitionId: 10,
+    tournamentId: 10,
     categoryId: 3,
     playerId: 2,
     place: 1
   });
   await Result.create({
-    competitionId: 10,
+    tournamentId: 10,
     categoryId: 3,
     playerId: 1,
     place: 2
   });
   await Result.create({
-    competitionId: 10,
+    tournamentId: 10,
     categoryId: 3,
     playerId: 11,
     place: 3
   });
   // Cieszyn 2010:
   await Result.create({
-    competitionId: 11,
+    tournamentId: 11,
     categoryId: 3,
     playerId: 2,
     place: 1
   });
   await Result.create({
-    competitionId: 11,
+    tournamentId: 11,
     categoryId: 3,
     playerId: 12,
     place: 2
   });
   await Result.create({
-    competitionId: 11,
+    tournamentId: 11,
     categoryId: 3,
     playerId: 13,
     place: 3
   });
   await Result.create({
-    competitionId: 11,
+    tournamentId: 11,
     categoryId: 3,
     playerId: 3,
     place: 4
   });
   await Result.create({
-    competitionId: 11,
+    tournamentId: 11,
     categoryId: 3,
     playerId: 8,
     place: 5
   });
   await Result.create({
-    competitionId: 11,
+    tournamentId: 11,
     categoryId: 3,
     playerId: 14,
     place: 6
   });
   await Result.create({
-    competitionId: 11,
+    tournamentId: 11,
     categoryId: 3,
     playerId: 11,
     place: 7
   });
   await Result.create({
-    competitionId: 11,
+    tournamentId: 11,
     categoryId: 3,
     playerId: 15,
     place: 8
   });
   // Jarocin 2010:
   await Result.create({
-    competitionId: 12,
+    tournamentId: 12,
     categoryId: 3,
     playerId: 7,
     place: 1
   });
   await Result.create({
-    competitionId: 12,
+    tournamentId: 12,
     categoryId: 3,
     playerId: 6,
     place: 2
   });
   await Result.create({
-    competitionId: 12,
+    tournamentId: 12,
     categoryId: 3,
     playerId: 2,
     place: 3
   });
   await Result.create({
-    competitionId: 12,
+    tournamentId: 12,
     categoryId: 3,
     playerId: 13,
     place: 4
   });
   await Result.create({
-    competitionId: 12,
+    tournamentId: 12,
     categoryId: 3,
     playerId: 1,
     place: 5
   });
   await Result.create({
-    competitionId: 12,
+    tournamentId: 12,
     categoryId: 3,
     playerId: 12,
     place: 6
   });
   await Result.create({
-    competitionId: 12,
+    tournamentId: 12,
     categoryId: 3,
     playerId: 16,
     place: 7
   });
   await Result.create({
-    competitionId: 12,
+    tournamentId: 12,
     categoryId: 3,
     playerId: 17,
     place: 8
   });
   // Łódź 2010:
   await Result.create({
-    competitionId: 13,
+    tournamentId: 13,
     categoryId: 3,
     playerId: 2,
     place: 1
   });
   await Result.create({
-    competitionId: 13,
+    tournamentId: 13,
     categoryId: 3,
     playerId: 13,
     place: 2
   });
   await Result.create({
-    competitionId: 13,
+    tournamentId: 13,
     categoryId: 3,
     playerId: 1,
     place: 3
   });
   // Międzyzdroje 2010:
   await Result.create({
-    competitionId: 14,
+    tournamentId: 14,
     categoryId: 3,
     playerId: 2,
     place: 1
   });
   await Result.create({
-    competitionId: 14,
+    tournamentId: 14,
     categoryId: 3,
     playerId: 6,
     place: 2
   });
   await Result.create({
-    competitionId: 14,
+    tournamentId: 14,
     categoryId: 3,
     playerId: 18,
     place: 3
   });
   // Olkusz 2010:
   await Result.create({
-    competitionId: 15,
+    tournamentId: 15,
     categoryId: 3,
     playerId: 2,
     place: 1
   });
   await Result.create({
-    competitionId: 15,
+    tournamentId: 15,
     categoryId: 3,
     playerId: 1,
     place: 2
   });
   await Result.create({
-    competitionId: 15,
+    tournamentId: 15,
     categoryId: 3,
     playerId: 12,
     place: 3
   });
   // Pyrzyce 2010:
   await Result.create({
-    competitionId: 16,
+    tournamentId: 16,
     categoryId: 3,
     playerId: 7,
     place: 1
   });
   // Focus 2011:
   await Result.create({
-    competitionId: 17,
+    tournamentId: 17,
     categoryId: 3,
     playerId: 1,
     place: 1
   });
   await Result.create({
-    competitionId: 17,
+    tournamentId: 17,
     categoryId: 3,
     playerId: 13,
     place: 2
   });
   await Result.create({
-    competitionId: 17,
+    tournamentId: 17,
     categoryId: 3,
     playerId: 2,
     place: 3
   });
   await Result.create({
-    competitionId: 17,
+    tournamentId: 17,
     categoryId: 3,
     playerId: 19,
     place: 4
   });
   await Result.create({
-    competitionId: 17,
+    tournamentId: 17,
     categoryId: 3,
     playerId: 12,
     place: 5
   });
   await Result.create({
-    competitionId: 17,
+    tournamentId: 17,
     categoryId: 3,
     playerId: 20,
     place: 6
   });
   await Result.create({
-    competitionId: 17,
+    tournamentId: 17,
     categoryId: 3,
     playerId: 7,
     place: 7
   });
   await Result.create({
-    competitionId: 17,
+    tournamentId: 17,
     categoryId: 3,
     playerId: 10,
     place: 8
   });
   // Grassroots 2011:
   await Result.create({
-    competitionId: 18,
+    tournamentId: 18,
     categoryId: 3,
     playerId: 7,
     place: 1
   });
   await Result.create({
-    competitionId: 18,
+    tournamentId: 18,
     categoryId: 3,
     playerId: 1,
     place: 2
   });
   await Result.create({
-    competitionId: 18,
+    tournamentId: 18,
     categoryId: 3,
     playerId: 10,
     place: 3
   });
   // Międzyzdroje 2011:
   await Result.create({
-    competitionId: 19,
+    tournamentId: 19,
     categoryId: 3,
     playerId: 2,
     place: 1
   });
   await Result.create({
-    competitionId: 19,
+    tournamentId: 19,
     categoryId: 3,
     playerId: 6,
     place: 2
   });
   await Result.create({
-    competitionId: 19,
+    tournamentId: 19,
     categoryId: 3,
     playerId: 20,
     place: 3
   });
   // Myszków 2011:
   await Result.create({
-    competitionId: 20,
+    tournamentId: 20,
     categoryId: 3,
     playerId: 7,
     place: 1
   });
   await Result.create({
-    competitionId: 20,
+    tournamentId: 20,
     categoryId: 3,
     playerId: 10,
     place: 2
   });
   await Result.create({
-    competitionId: 20,
+    tournamentId: 20,
     categoryId: 3,
     playerId: 2,
     place: 3
   });
   await Result.create({
-    competitionId: 20,
+    tournamentId: 20,
     categoryId: 3,
     playerId: 1,
     place: 4
   });
   await Result.create({
-    competitionId: 20,
+    tournamentId: 20,
     categoryId: 3,
     playerId: 21,
     place: 5
   });
   await Result.create({
-    competitionId: 20,
+    tournamentId: 20,
     categoryId: 3,
     playerId: 22,
     place: 6
   });
   await Result.create({
-    competitionId: 20,
+    tournamentId: 20,
     categoryId: 3,
     playerId: 11,
     place: 7
   });
   await Result.create({
-    competitionId: 20,
+    tournamentId: 20,
     categoryId: 3,
     playerId: 23,
     place: 8
   });
   // Pabianice 2011:
   await Result.create({
-    competitionId: 21,
+    tournamentId: 21,
     categoryId: 3,
     playerId: 13,
     place: 1
   });
   await Result.create({
-    competitionId: 21,
+    tournamentId: 21,
     categoryId: 3,
     playerId: 20,
     place: 2
   });
   await Result.create({
-    competitionId: 21,
+    tournamentId: 21,
     categoryId: 3,
     playerId: 2,
     place: 3
   });
   // Żerków 2011:
   await Result.create({
-    competitionId: 22,
+    tournamentId: 22,
     categoryId: 3,
     playerId: 2,
     place: 1
   });
   await Result.create({
-    competitionId: 22,
+    tournamentId: 22,
     categoryId: 3,
     playerId: 1,
     place: 2
   });
   await Result.create({
-    competitionId: 22,
+    tournamentId: 22,
     categoryId: 3,
     playerId: 13,
     place: 3
   });
   await Result.create({
-    competitionId: 22,
+    tournamentId: 22,
     categoryId: 3,
     playerId: 20,
     place: 4
   });
   await Result.create({
-    competitionId: 22,
+    tournamentId: 22,
     categoryId: 3,
     playerId: 11,
     place: 5
   });
   await Result.create({
-    competitionId: 22,
+    tournamentId: 22,
     categoryId: 3,
     playerId: 24,
     place: 6
   });
   await Result.create({
-    competitionId: 22,
+    tournamentId: 22,
     categoryId: 3,
     playerId: 25,
     place: 7
   });
   await Result.create({
-    competitionId: 22,
+    tournamentId: 22,
     categoryId: 3,
     playerId: 14,
     place: 8
   });
   // Bytów 2012:
   await Result.create({
-    competitionId: 23,
+    tournamentId: 23,
     categoryId: 3,
     playerId: 10,
     place: 1
   });
   await Result.create({
-    competitionId: 23,
+    tournamentId: 23,
     categoryId: 3,
     playerId: 2,
     place: 2
   });
   await Result.create({
-    competitionId: 23,
+    tournamentId: 23,
     categoryId: 3,
     playerId: 20,
     place: 3
   });
   // Focus 2012:
   await Result.create({
-    competitionId: 24,
+    tournamentId: 24,
     categoryId: 3,
     playerId: 7,
     place: 1
   });
   await Result.create({
-    competitionId: 24,
+    tournamentId: 24,
     categoryId: 3,
     playerId: 1,
     place: 2
   });
   await Result.create({
-    competitionId: 24,
+    tournamentId: 24,
     categoryId: 3,
     playerId: 13,
     place: 3
   });
   await Result.create({
-    competitionId: 24,
+    tournamentId: 24,
     categoryId: 3,
     playerId: 11,
     place: 4
   });
   await Result.create({
-    competitionId: 24,
+    tournamentId: 24,
     categoryId: 3,
     playerId: 10,
     place: 5
   });
   await Result.create({
-    competitionId: 24,
+    tournamentId: 24,
     categoryId: 3,
     playerId: 26,
     place: 6
   });
   await Result.create({
-    competitionId: 24,
+    tournamentId: 24,
     categoryId: 3,
     playerId: 2,
     place: 7
   });
   await Result.create({
-    competitionId: 24,
+    tournamentId: 24,
     categoryId: 3,
     playerId: 12,
     place: 8
   });
   // Myszków 2012:
   await Result.create({
-    competitionId: 25,
+    tournamentId: 25,
     categoryId: 3,
     playerId: 7,
     place: 1
   });
   await Result.create({
-    competitionId: 25,
+    tournamentId: 25,
     categoryId: 3,
     playerId: 10,
     place: 2
   });
   await Result.create({
-    competitionId: 25,
+    tournamentId: 25,
     categoryId: 3,
     playerId: 2,
     place: 3
   });
   await Result.create({
-    competitionId: 25,
+    tournamentId: 25,
     categoryId: 3,
     playerId: 23,
     place: 4
   });
   await Result.create({
-    competitionId: 25,
+    tournamentId: 25,
     categoryId: 3,
     playerId: 13,
     place: 5
   });
   await Result.create({
-    competitionId: 25,
+    tournamentId: 25,
     categoryId: 3,
     playerId: 25,
     place: 6
   });
   await Result.create({
-    competitionId: 25,
+    tournamentId: 25,
     categoryId: 3,
     playerId: 24,
     place: 7
   });
   await Result.create({
-    competitionId: 25,
+    tournamentId: 25,
     categoryId: 3,
     playerId: 12,
     place: 8
   });
   // RBSS 2012:
   await Result.create({
-    competitionId: 26,
+    tournamentId: 26,
     categoryId: 3,
     playerId: 13,
     place: 1
   });
   await Result.create({
-    competitionId: 26,
+    tournamentId: 26,
     categoryId: 3,
     playerId: 20,
     place: 2
   });
   await Result.create({
-    competitionId: 26,
+    tournamentId: 26,
     categoryId: 3,
     playerId: 2,
     place: 3
   });
   await Result.create({
-    competitionId: 26,
+    tournamentId: 26,
     categoryId: 3,
     playerId: 19,
     place: 4
   });
   await Result.create({
-    competitionId: 26,
+    tournamentId: 26,
     categoryId: 3,
     playerId: 10,
     place: 5
   });
   await Result.create({
-    competitionId: 26,
+    tournamentId: 26,
     categoryId: 3,
     playerId: 14,
     place: 6
   });
   await Result.create({
-    competitionId: 26,
+    tournamentId: 26,
     categoryId: 3,
     playerId: 27,
     place: 7
   });
   await Result.create({
-    competitionId: 26,
+    tournamentId: 26,
     categoryId: 3,
     playerId: 7,
     place: 8
   });
   // Żerków 2012:
   await Result.create({
-    competitionId: 27,
+    tournamentId: 27,
     categoryId: 3,
     playerId: 7,
     place: 1
   });
   await Result.create({
-    competitionId: 27,
+    tournamentId: 27,
     categoryId: 3,
     playerId: 1,
     place: 2
   });
   await Result.create({
-    competitionId: 27,
+    tournamentId: 27,
     categoryId: 3,
     playerId: 11,
     place: 3
   });
   await Result.create({
-    competitionId: 27,
+    tournamentId: 27,
     categoryId: 3,
     playerId: 19,
     place: 4
   });
   await Result.create({
-    competitionId: 27,
+    tournamentId: 27,
     categoryId: 3,
     playerId: 14,
     place: 5
   });
   await Result.create({
-    competitionId: 27,
+    tournamentId: 27,
     categoryId: 3,
     playerId: 23,
     place: 6
   });
   await Result.create({
-    competitionId: 27,
+    tournamentId: 27,
     categoryId: 3,
     playerId: 8,
     place: 7
   });
   await Result.create({
-    competitionId: 27,
+    tournamentId: 27,
     categoryId: 3,
     playerId: 27,
     place: 8
   });
   // Battlemasters Wrocław 2013:
   await Result.create({
-    competitionId: 28,
+    tournamentId: 28,
     categoryId: 3,
     playerId: 13,
     place: 1
   });
   await Result.create({
-    competitionId: 28,
+    tournamentId: 28,
     categoryId: 3,
     playerId: 2,
     place: 2
   });
   await Result.create({
-    competitionId: 28,
+    tournamentId: 28,
     categoryId: 3,
     playerId: 20,
     place: 3
   });
   // H&S 2013:
   await Result.create({
-    competitionId: 29,
+    tournamentId: 29,
     categoryId: 3,
     playerId: 13,
     place: 1
   });
   await Result.create({
-    competitionId: 29,
+    tournamentId: 29,
     categoryId: 3,
     playerId: 10,
     place: 2
   });
   await Result.create({
-    competitionId: 29,
+    tournamentId: 29,
     categoryId: 3,
     playerId: 1,
     place: 3
   });
   await Result.create({
-    competitionId: 29,
+    tournamentId: 29,
     categoryId: 3,
     playerId: 12,
     place: 4
   });
   await Result.create({
-    competitionId: 29,
+    tournamentId: 29,
     categoryId: 3,
     playerId: 2,
     place: 5
   });
   await Result.create({
-    competitionId: 29,
+    tournamentId: 29,
     categoryId: 3,
     playerId: 28,
     place: 6
   });
   await Result.create({
-    competitionId: 29,
+    tournamentId: 29,
     categoryId: 3,
     playerId: 11,
     place: 7
   });
   await Result.create({
-    competitionId: 29,
+    tournamentId: 29,
     categoryId: 3,
     playerId: 20,
     place: 8
   });
   // LFN 2013:
   await Result.create({
-    competitionId: 30,
+    tournamentId: 30,
     categoryId: 3,
     playerId: 13,
     place: 3
   });
   // Płock 2013:
   await Result.create({
-    competitionId: 31,
+    tournamentId: 31,
     categoryId: 3,
     playerId: 2,
     place: 1
   });
   await Result.create({
-    competitionId: 31,
+    tournamentId: 31,
     categoryId: 3,
     playerId: 19,
     place: 2
   });
   await Result.create({
-    competitionId: 31,
+    tournamentId: 31,
     categoryId: 3,
     playerId: 13,
     place: 3
   });
   // Żerków 2013:
   await Result.create({
-    competitionId: 32,
+    tournamentId: 32,
     categoryId: 3,
     playerId: 1,
     place: 1
   });
   await Result.create({
-    competitionId: 32,
+    tournamentId: 32,
     categoryId: 3,
     playerId: 2,
     place: 2
   });
   await Result.create({
-    competitionId: 32,
+    tournamentId: 32,
     categoryId: 3,
     playerId: 11,
     place: 3
   });
   await Result.create({
-    competitionId: 32,
+    tournamentId: 32,
     categoryId: 3,
     playerId: 20,
     place: 4
   });
   await Result.create({
-    competitionId: 32,
+    tournamentId: 32,
     categoryId: 3,
     playerId: 29,
     place: 5
   });
   await Result.create({
-    competitionId: 32,
+    tournamentId: 32,
     categoryId: 3,
     playerId: 25,
     place: 6
   });
   await Result.create({
-    competitionId: 32,
+    tournamentId: 32,
     categoryId: 3,
     playerId: 23,
     place: 7
   });
   await Result.create({
-    competitionId: 32,
+    tournamentId: 32,
     categoryId: 3,
     playerId: 30,
     place: 8
   });
   // Bytom 2014:
   await Result.create({
-    competitionId: 33,
+    tournamentId: 33,
     categoryId: 3,
     playerId: 1,
     place: 1
   });
   await Result.create({
-    competitionId: 33,
+    tournamentId: 33,
     categoryId: 3,
     playerId: 12,
     place: 2
   });
   await Result.create({
-    competitionId: 33,
+    tournamentId: 33,
     categoryId: 3,
     playerId: 11,
     place: 3
   });
   // Czarnków 2014:
   await Result.create({
-    competitionId: 34,
+    tournamentId: 34,
     categoryId: 3,
     playerId: 13,
     place: 1
   });
   await Result.create({
-    competitionId: 34,
+    tournamentId: 34,
     categoryId: 3,
     playerId: 11,
     place: 2
   });
   await Result.create({
-    competitionId: 34,
+    tournamentId: 34,
     categoryId: 3,
     playerId: 31,
     place: 3
   });
   // Międzyzdroje 2014:
   await Result.create({
-    competitionId: 35,
+    tournamentId: 35,
     categoryId: 3,
     playerId: 20,
     place: 1
   });
   await Result.create({
-    competitionId: 35,
+    tournamentId: 35,
     categoryId: 3,
     playerId: 45,
     place: 2
   });
   await Result.create({
-    competitionId: 35,
+    tournamentId: 35,
     categoryId: 3,
     playerId: 31,
     place: 3
   });
   // Myszków 2014:
   await Result.create({
-    competitionId: 36,
+    tournamentId: 36,
     categoryId: 3,
     playerId: 10,
     place: 1
   });
   await Result.create({
-    competitionId: 36,
+    tournamentId: 36,
     categoryId: 3,
     playerId: 2,
     place: 2
   });
   await Result.create({
-    competitionId: 36,
+    tournamentId: 36,
     categoryId: 3,
     playerId: 7,
     place: 3
   });
   await Result.create({
-    competitionId: 36,
+    tournamentId: 36,
     categoryId: 3,
     playerId: 29,
     place: 4
   });
   await Result.create({
-    competitionId: 36,
+    tournamentId: 36,
     categoryId: 3,
     playerId: 23,
     place: 5
   });
   await Result.create({
-    competitionId: 36,
+    tournamentId: 36,
     categoryId: 3,
     playerId: 19,
     place: 6
   });
   await Result.create({
-    competitionId: 36,
+    tournamentId: 36,
     categoryId: 3,
     playerId: 13,
     place: 7
   });
   await Result.create({
-    competitionId: 36,
+    tournamentId: 36,
     categoryId: 3,
     playerId: 11,
     place: 8
   });
   // Skawina 2014:
   await Result.create({
-    competitionId: 37,
+    tournamentId: 37,
     categoryId: 3,
     playerId: 11,
     place: 1
   });
   await Result.create({
-    competitionId: 37,
+    tournamentId: 37,
     categoryId: 3,
     playerId: 20,
     place: 2
   });
   await Result.create({
-    competitionId: 37,
+    tournamentId: 37,
     categoryId: 3,
     playerId: 32,
     place: 3
   });
   // Żerków 2014:
   await Result.create({
-    competitionId: 38,
+    tournamentId: 38,
     categoryId: 3,
     playerId: 20,
     place: 1
   });
   await Result.create({
-    competitionId: 38,
+    tournamentId: 38,
     categoryId: 3,
     playerId: 7,
     place: 2
   });
   await Result.create({
-    competitionId: 38,
+    tournamentId: 38,
     categoryId: 3,
     playerId: 12,
     place: 3
   });
   await Result.create({
-    competitionId: 38,
+    tournamentId: 38,
     categoryId: 3,
     playerId: 13,
     place: 4
   });
   await Result.create({
-    competitionId: 38,
+    tournamentId: 38,
     categoryId: 3,
     playerId: 29,
     place: 5
   });
   await Result.create({
-    competitionId: 38,
+    tournamentId: 38,
     categoryId: 3,
     playerId: 32,
     place: 6
   });
   await Result.create({
-    competitionId: 38,
+    tournamentId: 38,
     categoryId: 3,
     playerId: 11,
     place: 7
   });
   await Result.create({
-    competitionId: 38,
+    tournamentId: 38,
     categoryId: 3,
     playerId: 31,
     place: 8
   });
   // Błaszki 2015:
   await Result.create({
-    competitionId: 39,
+    tournamentId: 39,
     categoryId: 3,
     playerId: 33,
     place: 1
   });
   await Result.create({
-    competitionId: 39,
+    tournamentId: 39,
     categoryId: 3,
     playerId: 34,
     place: 2
   });
   await Result.create({
-    competitionId: 39,
+    tournamentId: 39,
     categoryId: 3,
     playerId: 31,
     place: 3
   });
   // Bytom 2015:
   await Result.create({
-    competitionId: 40,
+    tournamentId: 40,
     categoryId: 3,
     playerId: 32,
     place: 1
   });
   await Result.create({
-    competitionId: 40,
+    tournamentId: 40,
     categoryId: 3,
     playerId: 13,
     place: 2
   });
   await Result.create({
-    competitionId: 40,
+    tournamentId: 40,
     categoryId: 3,
     playerId: 1,
     place: 3
   });
   await Result.create({
-    competitionId: 40,
+    tournamentId: 40,
     categoryId: 3,
     playerId: 33,
     place: 4
   });
   await Result.create({
-    competitionId: 40,
+    tournamentId: 40,
     categoryId: 3,
     playerId: 11,
     place: 5
   });
   await Result.create({
-    competitionId: 40,
+    tournamentId: 40,
     categoryId: 3,
     playerId: 19,
     place: 6
   });
   await Result.create({
-    competitionId: 40,
+    tournamentId: 40,
     categoryId: 3,
     playerId: 34,
     place: 7
   });
   await Result.create({
-    competitionId: 40,
+    tournamentId: 40,
     categoryId: 3,
     playerId: 15,
     place: 8
   });
   // Czarnków 2015:
   await Result.create({
-    competitionId: 41,
+    tournamentId: 41,
     categoryId: 3,
     playerId: 7,
     place: 1
   });
   await Result.create({
-    competitionId: 41,
+    tournamentId: 41,
     categoryId: 3,
     playerId: 11,
     place: 2
   });
   await Result.create({
-    competitionId: 41,
+    tournamentId: 41,
     categoryId: 3,
     playerId: 10,
     place: 3
   });
   // Focus 2015:
   await Result.create({
-    competitionId: 42,
+    tournamentId: 42,
     categoryId: 3,
     playerId: 13,
     place: 1
   });
   await Result.create({
-    competitionId: 42,
+    tournamentId: 42,
     categoryId: 3,
     playerId: 10,
     place: 2
   });
   await Result.create({
-    competitionId: 42,
+    tournamentId: 42,
     categoryId: 3,
     playerId: 29,
     place: 3
   });
   await Result.create({
-    competitionId: 42,
+    tournamentId: 42,
     categoryId: 3,
     playerId: 32,
     place: 4
   });
   await Result.create({
-    competitionId: 42,
+    tournamentId: 42,
     categoryId: 3,
     playerId: 28,
     place: 5
   });
   await Result.create({
-    competitionId: 42,
+    tournamentId: 42,
     categoryId: 3,
     playerId: 2,
     place: 6
   });
   await Result.create({
-    competitionId: 42,
+    tournamentId: 42,
     categoryId: 3,
     playerId: 11,
     place: 7
   });
   await Result.create({
-    competitionId: 42,
+    tournamentId: 42,
     categoryId: 3,
     playerId: 12,
     place: 8
   });
   // Gubin 2015:
   await Result.create({
-    competitionId: 43,
+    tournamentId: 43,
     categoryId: 3,
     playerId: 35,
     place: 1
   });
   await Result.create({
-    competitionId: 43,
+    tournamentId: 43,
     categoryId: 3,
     playerId: 36,
     place: 2
   });
   await Result.create({
-    competitionId: 43,
+    tournamentId: 43,
     categoryId: 3,
     playerId: 37,
     place: 3
   });
   // Lublin 2015:
   await Result.create({
-    competitionId: 44,
+    tournamentId: 44,
     categoryId: 3,
     playerId: 19,
     place: 1
   });
   await Result.create({
-    competitionId: 44,
+    tournamentId: 44,
     categoryId: 3,
     playerId: 20,
     place: 2
   });
   await Result.create({
-    competitionId: 44,
+    tournamentId: 44,
     categoryId: 3,
     playerId: 32,
     place: 3
   });
   // Międzyzdroje 2015:
   await Result.create({
-    competitionId: 45,
+    tournamentId: 45,
     categoryId: 3,
     playerId: 20,
     place: 1
   });
   await Result.create({
-    competitionId: 45,
+    tournamentId: 45,
     categoryId: 3,
     playerId: 38,
     place: 2
   });
   // Przygodzice 2015:
   await Result.create({
-    competitionId: 46,
+    tournamentId: 46,
     categoryId: 3,
     playerId: 34,
     place: 1
   });
   await Result.create({
-    competitionId: 46,
+    tournamentId: 46,
     categoryId: 3,
     playerId: 31,
     place: 2
   });
   await Result.create({
-    competitionId: 46,
+    tournamentId: 46,
     categoryId: 3,
     playerId: 39,
     place: 3
   });
   // Skawina 2015:
   await Result.create({
-    competitionId: 47,
+    tournamentId: 47,
     categoryId: 3,
     playerId: 13,
     place: 1
   });
   await Result.create({
-    competitionId: 47,
+    tournamentId: 47,
     categoryId: 3,
     playerId: 11,
     place: 2
   });
   await Result.create({
-    competitionId: 47,
+    tournamentId: 47,
     categoryId: 3,
     playerId: 8,
     place: 3
   });
   // Żerków 2015:
   await Result.create({
-    competitionId: 48,
+    tournamentId: 48,
     categoryId: 3,
     playerId: 13,
     place: 1
   });
   await Result.create({
-    competitionId: 48,
+    tournamentId: 48,
     categoryId: 3,
     playerId: 11,
     place: 2
   });
   await Result.create({
-    competitionId: 48,
+    tournamentId: 48,
     categoryId: 3,
     playerId: 12,
     place: 3
   });
   await Result.create({
-    competitionId: 48,
+    tournamentId: 48,
     categoryId: 3,
     playerId: 40,
     place: 4
   });
   await Result.create({
-    competitionId: 48,
+    tournamentId: 48,
     categoryId: 3,
     playerId: 1,
     place: 5
   });
   await Result.create({
-    competitionId: 48,
+    tournamentId: 48,
     categoryId: 3,
     playerId: 29,
     place: 6
   });
   await Result.create({
-    competitionId: 48,
+    tournamentId: 48,
     categoryId: 3,
     playerId: 24,
     place: 7
   });
   await Result.create({
-    competitionId: 48,
+    tournamentId: 48,
     categoryId: 3,
     playerId: 28,
     place: 8
   });
   // Błaszki 2016:
   await Result.create({
-    competitionId: 49,
+    tournamentId: 49,
     categoryId: 3,
     playerId: 31,
     place: 1
   });
   await Result.create({
-    competitionId: 49,
+    tournamentId: 49,
     categoryId: 3,
     playerId: 13,
     place: 2
   });
   await Result.create({
-    competitionId: 49,
+    tournamentId: 49,
     categoryId: 3,
     playerId: 34,
     place: 3
   });
   // Bytom M1 2016:
   await Result.create({
-    competitionId: 50,
+    tournamentId: 50,
     categoryId: 3,
     playerId: 13,
     place: 1
   });
   await Result.create({
-    competitionId: 50,
+    tournamentId: 50,
     categoryId: 3,
     playerId: 2,
     place: 2
   });
   await Result.create({
-    competitionId: 50,
+    tournamentId: 50,
     categoryId: 3,
     playerId: 11,
     place: 3
   });
   // Częstochowa M1 2016:
   await Result.create({
-    competitionId: 51,
+    tournamentId: 51,
     categoryId: 3,
     playerId: 11,
     place: 1
   });
   await Result.create({
-    competitionId: 51,
+    tournamentId: 51,
     categoryId: 3,
     playerId: 13,
     place: 2
   });
   await Result.create({
-    competitionId: 51,
+    tournamentId: 51,
     categoryId: 3,
     playerId: 12,
     place: 3
   });
   // Focus 2016:
   await Result.create({
-    competitionId: 52,
+    tournamentId: 52,
     categoryId: 3,
     playerId: 13,
     place: 1
   });
   await Result.create({
-    competitionId: 52,
+    tournamentId: 52,
     categoryId: 3,
     playerId: 10,
     place: 2
   });
   await Result.create({
-    competitionId: 52,
+    tournamentId: 52,
     categoryId: 3,
     playerId: 29,
     place: 3
   });
   await Result.create({
-    competitionId: 52,
+    tournamentId: 52,
     categoryId: 3,
     playerId: 2,
     place: 4
   });
   await Result.create({
-    competitionId: 52,
+    tournamentId: 52,
     categoryId: 3,
     playerId: 32,
     place: 5
   });
   await Result.create({
-    competitionId: 52,
+    tournamentId: 52,
     categoryId: 3,
     playerId: 20,
     place: 6
   });
   // Gubin 2016:
   await Result.create({
-    competitionId: 53,
+    tournamentId: 53,
     categoryId: 3,
     playerId: 37,
     place: 1
   });
   await Result.create({
-    competitionId: 53,
+    tournamentId: 53,
     categoryId: 3,
     playerId: 31,
     place: 2
   });
   await Result.create({
-    competitionId: 53,
+    tournamentId: 53,
     categoryId: 3,
     playerId: 35,
     place: 3
   });
   // LFN 2016:
   await Result.create({
-    competitionId: 54,
+    tournamentId: 54,
     categoryId: 3,
     playerId: 13,
     place: 1
   });
   // Lublin 2016:
   await Result.create({
-    competitionId: 55,
+    tournamentId: 55,
     categoryId: 3,
     playerId: 32,
     place: 1
   });
   await Result.create({
-    competitionId: 55,
+    tournamentId: 55,
     categoryId: 3,
     playerId: 29,
     place: 2
   });
   await Result.create({
-    competitionId: 55,
+    tournamentId: 55,
     categoryId: 3,
     playerId: 41,
     place: 3
   });
   // Marki M1 2016:
   await Result.create({
-    competitionId: 56,
+    tournamentId: 56,
     categoryId: 3,
     playerId: 12,
     place: 1
   });
   await Result.create({
-    competitionId: 56,
+    tournamentId: 56,
     categoryId: 3,
     playerId: 8,
     place: 2
   });
   await Result.create({
-    competitionId: 56,
+    tournamentId: 56,
     categoryId: 3,
     playerId: 1,
     place: 3
   });
   // Olkusz 2016:
   await Result.create({
-    competitionId: 57,
+    tournamentId: 57,
     categoryId: 3,
     playerId: 1,
     place: 1
   });
   await Result.create({
-    competitionId: 57,
+    tournamentId: 57,
     categoryId: 3,
     playerId: 11,
     place: 2
   });
   await Result.create({
-    competitionId: 57,
+    tournamentId: 57,
     categoryId: 3,
     playerId: 8,
     place: 3
   });
   await Result.create({
-    competitionId: 57,
+    tournamentId: 57,
     categoryId: 3,
     playerId: 15,
     place: 5
   });
   await Result.create({
-    competitionId: 57,
+    tournamentId: 57,
     categoryId: 3,
     playerId: 12,
     place: 6
   });
   await Result.create({
-    competitionId: 57,
+    tournamentId: 57,
     categoryId: 3,
     playerId: 31,
     place: 7
   });
   await Result.create({
-    competitionId: 57,
+    tournamentId: 57,
     categoryId: 3,
     playerId: 29,
     place: 8
   });
   // Radom M1 2016:
   await Result.create({
-    competitionId: 58,
+    tournamentId: 58,
     categoryId: 3,
     playerId: 2,
     place: 1
   });
   await Result.create({
-    competitionId: 58,
+    tournamentId: 58,
     categoryId: 3,
     playerId: 1,
     place: 2
   });
   await Result.create({
-    competitionId: 58,
+    tournamentId: 58,
     categoryId: 3,
     playerId: 32,
     place: 3
   });
   // Skawina 2016:
   await Result.create({
-    competitionId: 59,
+    tournamentId: 59,
     categoryId: 3,
     playerId: 11,
     place: 1
   });
   await Result.create({
-    competitionId: 59,
+    tournamentId: 59,
     categoryId: 3,
     playerId: 31,
     place: 2
   });
   await Result.create({
-    competitionId: 59,
+    tournamentId: 59,
     categoryId: 3,
     playerId: 13,
     place: 3
   });
   // Zabrze M1 2016:
   await Result.create({
-    competitionId: 60,
+    tournamentId: 60,
     categoryId: 3,
     playerId: 8,
     place: 1
   });
   await Result.create({
-    competitionId: 60,
+    tournamentId: 60,
     categoryId: 3,
     playerId: 13,
     place: 2
   });
   await Result.create({
-    competitionId: 60,
+    tournamentId: 60,
     categoryId: 3,
     playerId: 29,
     place: 3
   });
   // Żerków 2016:
   await Result.create({
-    competitionId: 61,
+    tournamentId: 61,
     categoryId: 3,
     playerId: 13,
     place: 1
   });
   await Result.create({
-    competitionId: 61,
+    tournamentId: 61,
     categoryId: 3,
     playerId: 12,
     place: 2
   });
   await Result.create({
-    competitionId: 61,
+    tournamentId: 61,
     categoryId: 3,
     playerId: 11,
     place: 3
   });
   await Result.create({
-    competitionId: 61,
+    tournamentId: 61,
     categoryId: 3,
     playerId: 1,
     place: 4
   });
   await Result.create({
-    competitionId: 61,
+    tournamentId: 61,
     categoryId: 3,
     playerId: 20,
     place: 5
   });
   await Result.create({
-    competitionId: 61,
+    tournamentId: 61,
     categoryId: 3,
     playerId: 29,
     place: 6
   });
   await Result.create({
-    competitionId: 61,
+    tournamentId: 61,
     categoryId: 3,
     playerId: 19,
     place: 7
   });
   await Result.create({
-    competitionId: 61,
+    tournamentId: 61,
     categoryId: 3,
     playerId: 32,
     place: 8
   });
   // Błaszki 2017:
   await Result.create({
-    competitionId: 62,
+    tournamentId: 62,
     categoryId: 3,
     playerId: 12,
     place: 1
   });
   await Result.create({
-    competitionId: 62,
+    tournamentId: 62,
     categoryId: 3,
     playerId: 31,
     place: 2
   });
   await Result.create({
-    competitionId: 62,
+    tournamentId: 62,
     categoryId: 3,
     playerId: 34,
     place: 3
   });
   // Chojnice 2017:
   await Result.create({
-    competitionId: 63,
+    tournamentId: 63,
     categoryId: 3,
     playerId: 20,
     place: 1
   });
   await Result.create({
-    competitionId: 63,
+    tournamentId: 63,
     categoryId: 3,
     playerId: 37,
     place: 2
   });
   await Result.create({
-    competitionId: 63,
+    tournamentId: 63,
     categoryId: 3,
     playerId: 42,
     place: 3
   });
   // Focus 2017:
   await Result.create({
-    competitionId: 64,
+    tournamentId: 64,
     categoryId: 3,
     playerId: 1,
     place: 1
   });
   await Result.create({
-    competitionId: 64,
+    tournamentId: 64,
     categoryId: 3,
     playerId: 29,
     place: 2
   });
   await Result.create({
-    competitionId: 64,
+    tournamentId: 64,
     categoryId: 3,
     playerId: 13,
     place: 3
   });
   await Result.create({
-    competitionId: 64,
+    tournamentId: 64,
     categoryId: 3,
     playerId: 10,
     place: 5
   });
   await Result.create({
-    competitionId: 64,
+    tournamentId: 64,
     categoryId: 3,
     playerId: 34,
     place: 6
   });
   await Result.create({
-    competitionId: 64,
+    tournamentId: 64,
     categoryId: 3,
     playerId: 8,
     place: 7
   });
   // Freestival 2017:
   await Result.create({
-    competitionId: 65,
+    tournamentId: 65,
     categoryId: 3,
     playerId: 12,
     place: 1
   });
   await Result.create({
-    competitionId: 65,
+    tournamentId: 65,
     categoryId: 3,
     playerId: 29,
     place: 2
   });
   await Result.create({
-    competitionId: 65,
+    tournamentId: 65,
     categoryId: 3,
     playerId: 13,
     place: 3
   });
   await Result.create({
-    competitionId: 65,
+    tournamentId: 65,
     categoryId: 3,
     playerId: 43,
     place: 4
   });
   await Result.create({
-    competitionId: 65,
+    tournamentId: 65,
     categoryId: 3,
     playerId: 19,
     place: 5
   });
   await Result.create({
-    competitionId: 65,
+    tournamentId: 65,
     categoryId: 3,
     playerId: 28,
     place: 6
   });
   await Result.create({
-    competitionId: 65,
+    tournamentId: 65,
     categoryId: 3,
     playerId: 44,
     place: 7
   });
   await Result.create({
-    competitionId: 65,
+    tournamentId: 65,
     categoryId: 3,
     playerId: 15,
     place: 8
   });
   // Olkusz 2017:
   await Result.create({
-    competitionId: 66,
+    tournamentId: 66,
     categoryId: 3,
     playerId: 13,
     place: 1
   });
   await Result.create({
-    competitionId: 66,
+    tournamentId: 66,
     categoryId: 3,
     playerId: 10,
     place: 2
   });
   await Result.create({
-    competitionId: 66,
+    tournamentId: 66,
     categoryId: 3,
     playerId: 29,
     place: 3
   });
   await Result.create({
-    competitionId: 66,
+    tournamentId: 66,
     categoryId: 3,
     playerId: 1,
     place: 4
   });
   await Result.create({
-    competitionId: 66,
+    tournamentId: 66,
     categoryId: 3,
     playerId: 8,
     place: 5
   });
   await Result.create({
-    competitionId: 66,
+    tournamentId: 66,
     categoryId: 3,
     playerId: 12,
     place: 6
   });
   await Result.create({
-    competitionId: 66,
+    tournamentId: 66,
     categoryId: 3,
     playerId: 24,
     place: 7
   });
   await Result.create({
-    competitionId: 66,
+    tournamentId: 66,
     categoryId: 3,
     playerId: 32,
     place: 8
   });
   // Skawina 2017:
   await Result.create({
-    competitionId: 67,
+    tournamentId: 67,
     categoryId: 3,
     playerId: 32,
     place: 1
   });
   await Result.create({
-    competitionId: 67,
+    tournamentId: 67,
     categoryId: 3,
     playerId: 29,
     place: 2
   });
   await Result.create({
-    competitionId: 67,
+    tournamentId: 67,
     categoryId: 3,
     playerId: 8,
     place: 3
@@ -2885,6 +2885,6 @@ export async function mockDb() {
   await createLocations();
   await createPlayers();
   await createCategories();
-  await createCompetitions();
+  await createTournaments();
   await createResults();
 }

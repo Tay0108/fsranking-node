@@ -1,11 +1,11 @@
 import * as sequelize from "sequelize";
 import { playerFactory } from "./playerModel";
-import { competitionFactory } from "./competitionModel";
+import { tournamentFactory } from "./tournamentModel";
 import { nationalityFactory } from "./nationalityModel";
 import { locationFactory } from "./locationModel";
 import { resultFactory } from "./resultModel";
 import { categoryFactory } from "./categoryModel";
-import { competitionHasCategoryFactory } from "./competitionHasCategoryModel";
+import { tournamentHasCategoryFactory } from "./tournamentHasCategoryModel";
 import { socialMediaFactory } from "./SocialMediaModel";
 import { placeToPointsFactory } from "./placeToPointsModel";
 
@@ -30,8 +30,8 @@ export const dbConfig = new sequelize.Sequelize(
 // sequelize instance as parameter give them `dbConfig`
 
 export const Category = categoryFactory(dbConfig);
-export const Competition = competitionFactory(dbConfig);
-export const CompetitionHasCategory = competitionHasCategoryFactory(dbConfig);
+export const Tournament = tournamentFactory(dbConfig);
+export const TournamentHasCategory = tournamentHasCategoryFactory(dbConfig);
 export const Location = locationFactory(dbConfig);
 export const Nationality = nationalityFactory(dbConfig);
 export const SocialMedia = socialMediaFactory(dbConfig);
@@ -44,13 +44,13 @@ export const PlaceToPoints = placeToPointsFactory(dbConfig);
 Player.belongsTo(Nationality);
 Player.belongsTo(SocialMedia);
 
-Competition.belongsTo(Location);
-Competition.belongsToMany(Category, {
-  through: { model: CompetitionHasCategory }
+Tournament.belongsTo(Location);
+Tournament.belongsToMany(Category, {
+  through: { model: TournamentHasCategory }
 });
 
-Result.belongsTo(Competition);
+Result.belongsTo(Tournament);
 Result.belongsTo(Player);
 Result.belongsTo(Category);
 
-// Competition.hasMany();
+// Tournament.hasMany();
