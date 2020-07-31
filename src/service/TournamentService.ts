@@ -56,10 +56,7 @@ export class TournamentService {
     transaction?
   ) {
     results.forEach(({ playerId, place }) => {
-      Result.create(
-        { tournamentId, categoryId, playerId, place },
-        transaction
-      );
+      Result.create({ tournamentId, categoryId, playerId, place }, transaction);
     });
   }
 }
