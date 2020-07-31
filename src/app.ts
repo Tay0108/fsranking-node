@@ -26,7 +26,7 @@ const app = express();
 const allowedOrigins: Array<string> = [
   "http://localhost:3000",
   "http://localhost:5000",
-  "https://fs-ranking.herokuapp.com/"
+  "https://fs-ranking.herokuapp.com"
 ];
 
 app.use(
