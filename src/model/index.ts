@@ -6,7 +6,7 @@ import { locationFactory } from "./locationModel";
 import { resultFactory } from "./resultModel";
 import { categoryFactory } from "./categoryModel";
 import { tournamentHasCategoryFactory } from "./tournamentHasCategoryModel";
-import { socialMediaFactory } from "./SocialMediaModel";
+import { socialMediaFactory } from "./socialMediaModel";
 import { placeToPointsFactory } from "./placeToPointsModel";
 
 export const dbConfig = new sequelize.Sequelize(
