@@ -1,4 +1,4 @@
-import { Category, PlaceToPoints, Player, Result } from "../model";
+import { Category, PlaceToPoints, Player, Result, Tournament } from "../model";
 
 const debug = require("debug")("ranking.service");
 
@@ -6,6 +6,15 @@ export class RankingService {
   async get(categoryId: number, transaction?) {
     const category = await Category.findByPk(categoryId, { transaction });
     const gender: string = category.gender; // TODO: both genders
+
+    const tournamentWeights = new Map();
+
+    (await Tournament.findAll({
+      attributes: ["id", "weight"],
+      raw: true
+    })).forEach(obj => {
+      tournamentWeights.set(obj.id, obj.weight);
+    });
 
     const results = await Result.findAll({
       where: { categoryId },
@@ -40,13 +49,13 @@ export class RankingService {
           ...players.filter((player) => player.id === result.playerId)[0],
           points: placeToPoints.filter(
             (entry) => entry.place === result.place
-          )[0].points
+          )[0].points * tournamentWeights.get(result.tournamentId)
         });
       } else {
         const rankingEntry = ranking.get(result.playerId);
         rankingEntry.points += placeToPoints.filter(
           (entry) => entry.place === result.place
-        )[0].points;
+        )[0].points * tournamentWeights.get(result.tournamentId);
       }
     });
 
