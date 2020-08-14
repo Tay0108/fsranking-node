@@ -1,4 +1,11 @@
-import { Category, PlaceToPoints, Player, Result, Tournament } from "../model";
+import {
+  Category,
+  Nationality,
+  PlaceToPoints,
+  Player,
+  Result,
+  Tournament
+} from "../model";
 
 const debug = require("debug")("ranking.service");
 
@@ -9,10 +16,12 @@ export class RankingService {
 
     const tournamentWeights = new Map();
 
-    (await Tournament.findAll({
-      attributes: ["id", "weight"],
-      raw: true
-    })).forEach(obj => {
+    (
+      await Tournament.findAll({
+        attributes: ["id", "weight"],
+        raw: true
+      })
+    ).forEach((obj) => {
       tournamentWeights.set(obj.id, obj.weight);
     });
 
@@ -31,6 +40,13 @@ export class RankingService {
       // TODO: refactor it
       players = await Player.findAll({
         raw: true,
+        nest: true,
+        include: [
+          {
+            model: Nationality,
+            attributes: ["id", "name", "abbreviation"]
+          }
+        ],
         transaction
       });
     } else {
@@ -47,15 +63,15 @@ export class RankingService {
       if (!ranking.has(result.playerId)) {
         ranking.set(result.playerId, {
           ...players.filter((player) => player.id === result.playerId)[0],
-          points: placeToPoints.filter(
-            (entry) => entry.place === result.place
-          )[0].points * tournamentWeights.get(result.tournamentId)
+          points:
+            placeToPoints.filter((entry) => entry.place === result.place)[0]
+              .points * tournamentWeights.get(result.tournamentId)
         });
       } else {
         const rankingEntry = ranking.get(result.playerId);
-        rankingEntry.points += placeToPoints.filter(
-          (entry) => entry.place === result.place
-        )[0].points * tournamentWeights.get(result.tournamentId);
+        rankingEntry.points +=
+          placeToPoints.filter((entry) => entry.place === result.place)[0]
+            .points * tournamentWeights.get(result.tournamentId);
       }
     });
 
@@ -63,6 +79,12 @@ export class RankingService {
       (playerA, playerB) => playerB.points - playerA.points
     );
 
-    return sortedRankingByPoints;
+    const rankingWithPlaces = sortedRankingByPoints.map((player, place) => {
+      player.place = ++place;
+      player.trend = 0; // TODO: now trend is mocked, unmock it
+      return player;
+    });
+
+    return rankingWithPlaces;
   }
 }

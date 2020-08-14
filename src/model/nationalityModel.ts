@@ -24,6 +24,10 @@ export function nationalityFactory(sequelize: Sequelize): NationalityStatic {
       autoIncrement: true,
       primaryKey: true
     },
+    abbreviation: {
+      type: DataTypes.STRING,
+      allowNull: false
+    },
     name: {
       type: DataTypes.STRING,
       allowNull: false
