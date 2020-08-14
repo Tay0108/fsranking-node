@@ -6,7 +6,7 @@ export interface PlayerAttributes {
   firstName: string;
   lastName: string;
   nickname: string;
-  age: number;
+  birthYear: number;
   careerStartYear: number;
 }
 
@@ -42,7 +42,7 @@ export function playerFactory(sequelize: Sequelize): PlayerStatic {
       type: DataTypes.STRING,
       allowNull: true
     },
-    age: {
+    birthYear: {
       type: DataTypes.INTEGER.UNSIGNED,
       allowNull: true
     },

@@ -45,7 +45,7 @@ export async function createPlayers() {
     firstName: "Szymon",
     lastName: "Skalski",
     nickname: "Szymo",
-    age: 1,
+    birthYear: 1990,
     careerStartYear: 1,
     nationalityId: 1
   });
@@ -54,7 +54,7 @@ export async function createPlayers() {
     firstName: "Paweł",
     lastName: "Skóra",
     nickname: "Skóra",
-    age: 1,
+    birthYear: 1990,
     careerStartYear: 1,
     nationalityId: 1
   });
@@ -63,7 +63,7 @@ export async function createPlayers() {
     firstName: "Krzysztof",
     lastName: "Golonka",
     nickname: "Clyde",
-    age: 1,
+    birthYear: 1990,
     careerStartYear: 1,
     nationalityId: 1
   });
@@ -72,7 +72,7 @@ export async function createPlayers() {
     firstName: "Tomasz",
     lastName: "Lebiocki",
     nickname: "Lebioda",
-    age: 1,
+    birthYear: 1990,
     careerStartYear: 1,
     nationalityId: 1
   });
@@ -81,7 +81,7 @@ export async function createPlayers() {
     firstName: "Bartosz",
     lastName: "Skalski",
     nickname: "Skała",
-    age: 1,
+    birthYear: 1990,
     careerStartYear: 1,
     nationalityId: 1
   });
@@ -90,7 +90,7 @@ export async function createPlayers() {
     firstName: "Filip",
     lastName: "Tyczkowski",
     nickname: "Tycza",
-    age: 1,
+    birthYear: 1990,
     careerStartYear: 1,
     nationalityId: 1
   });
@@ -99,7 +99,7 @@ export async function createPlayers() {
     firstName: "Michał",
     lastName: "Rycaj",
     nickname: "MichRyc",
-    age: 1,
+    birthYear: 1990,
     careerStartYear: 1,
     nationalityId: 1
   });
@@ -108,7 +108,7 @@ export async function createPlayers() {
     firstName: "Dawid",
     lastName: "Biegun",
     nickname: "Zegan",
-    age: 1,
+    birthYear: 1990,
     careerStartYear: 1,
     nationalityId: 1
   });
@@ -117,7 +117,7 @@ export async function createPlayers() {
     firstName: "Marcin",
     lastName: "Teper",
     nickname: "CNK",
-    age: 1,
+    birthYear: 1990,
     careerStartYear: 1,
     nationalityId: 1
   });
@@ -126,7 +126,7 @@ export async function createPlayers() {
     firstName: "Łukasz",
     lastName: "Chwieduk",
     nickname: "Luki",
-    age: 1,
+    birthYear: 1990,
     careerStartYear: 1,
     nationalityId: 1
   });
@@ -135,7 +135,7 @@ export async function createPlayers() {
     firstName: "Dawid",
     lastName: "Ziomek",
     nickname: "Ziomal",
-    age: 1,
+    birthYear: 1990,
     careerStartYear: 1,
     nationalityId: 1
   });
@@ -144,7 +144,7 @@ export async function createPlayers() {
     firstName: "Bartłomiej",
     lastName: "Rak",
     nickname: "Kalaputa",
-    age: 1,
+    birthYear: 1990,
     careerStartYear: 1,
     nationalityId: 1
   });
@@ -153,7 +153,7 @@ export async function createPlayers() {
     firstName: "Daniel",
     lastName: "Mikołajek",
     nickname: "Mikołaj",
-    age: 1,
+    birthYear: 1990,
     careerStartYear: 1,
     nationalityId: 1
   });
@@ -162,7 +162,7 @@ export async function createPlayers() {
     firstName: "Radosław",
     lastName: "Zdunek",
     nickname: "Radox",
-    age: 1,
+    birthYear: 1990,
     careerStartYear: 1,
     nationalityId: 1
   });
@@ -171,7 +171,7 @@ export async function createPlayers() {
     firstName: "Daniel",
     lastName: "Kowal",
     nickname: "Danielson",
-    age: 1,
+    birthYear: 1990,
     careerStartYear: 1,
     nationalityId: 1
   });
@@ -180,7 +180,7 @@ export async function createPlayers() {
     firstName: "Oliver",
     lastName: "Cherek",
     nickname: "Oli",
-    age: 1,
+    birthYear: 1990,
     careerStartYear: 1,
     nationalityId: 1
   });
@@ -189,7 +189,7 @@ export async function createPlayers() {
     firstName: "Daniel",
     lastName: "Długołęcki",
     nickname: "Q100m",
-    age: 1,
+    birthYear: 1990,
     careerStartYear: 1,
     nationalityId: 1
   });
@@ -198,7 +198,7 @@ export async function createPlayers() {
     firstName: "Łukasz",
     lastName: "Karaś",
     nickname: "Karaś",
-    age: 1,
+    birthYear: 1990,
     careerStartYear: 1,
     nationalityId: 1
   });
@@ -207,7 +207,7 @@ export async function createPlayers() {
     firstName: "Mateusz",
     lastName: "Odrzygóźdź",
     nickname: "Lotar",
-    age: 1,
+    birthYear: 1990,
     careerStartYear: 1,
     nationalityId: 1
   });
@@ -216,7 +216,7 @@ export async function createPlayers() {
     firstName: "Dawid",
     lastName: "Krzyżowski",
     nickname: "Kojak",
-    age: 1,
+    birthYear: 1990,
     careerStartYear: 1,
     nationalityId: 1
   });
@@ -225,7 +225,7 @@ export async function createPlayers() {
     firstName: "Mateusz",
     lastName: "Związek",
     nickname: "Zdzichu",
-    age: 1,
+    birthYear: 1990,
     careerStartYear: 1,
     nationalityId: 1
   });
@@ -234,7 +234,7 @@ export async function createPlayers() {
     firstName: "Paweł",
     lastName: "Wierzchowski",
     nickname: "Wieszak",
-    age: 1,
+    birthYear: 1990,
     careerStartYear: 1,
     nationalityId: 1
   });
@@ -243,7 +243,7 @@ export async function createPlayers() {
     firstName: "Dawid",
     lastName: "Koczur",
     nickname: "DaKo",
-    age: 1,
+    birthYear: 1990,
     careerStartYear: 1,
     nationalityId: 1
   });
@@ -252,7 +252,7 @@ export async function createPlayers() {
     firstName: "Paweł",
     lastName: "Kwit",
     nickname: "Ronnie",
-    age: 1,
+    birthYear: 1990,
     careerStartYear: 1,
     nationalityId: 1
   });
@@ -261,7 +261,7 @@ export async function createPlayers() {
     firstName: "Filip",
     lastName: "Chudziński",
     nickname: "Fichu",
-    age: 1,
+    birthYear: 1990,
     careerStartYear: 1,
     nationalityId: 1
   });
@@ -270,7 +270,7 @@ export async function createPlayers() {
     firstName: "Błażej",
     lastName: "Nowikowski",
     nickname: "Błażej",
-    age: 1,
+    birthYear: 1990,
     careerStartYear: 1,
     nationalityId: 1
   });
@@ -279,7 +279,7 @@ export async function createPlayers() {
     firstName: "Jakub",
     lastName: "Kokot",
     nickname: "",
-    age: 1,
+    birthYear: 1990,
     careerStartYear: 1,
     nationalityId: 1
   });
@@ -288,7 +288,7 @@ export async function createPlayers() {
     firstName: "Adrian",
     lastName: "Franc",
     nickname: "Franek",
-    age: 1,
+    birthYear: 1990,
     careerStartYear: 1,
     nationalityId: 1
   });
@@ -297,7 +297,7 @@ export async function createPlayers() {
     firstName: "Robert",
     lastName: "Guzik",
     nickname: "Guzik",
-    age: 1,
+    birthYear: 1990,
     careerStartYear: 1,
     nationalityId: 1
   });
@@ -306,7 +306,7 @@ export async function createPlayers() {
     firstName: "Gaetan",
     lastName: "Czaja",
     nickname: "",
-    age: 1,
+    birthYear: 1990,
     careerStartYear: 1,
     nationalityId: 1
   });
@@ -315,7 +315,7 @@ export async function createPlayers() {
     firstName: "Stanisław",
     lastName: "Kościelny",
     nickname: "Staniu",
-    age: 1,
+    birthYear: 1990,
     careerStartYear: 1,
     nationalityId: 1
   });
@@ -324,7 +324,7 @@ export async function createPlayers() {
     firstName: "Jaromir",
     lastName: "Poprawa",
     nickname: "JRK",
-    age: 1,
+    birthYear: 1990,
     careerStartYear: 1,
     nationalityId: 1
   });
@@ -333,7 +333,7 @@ export async function createPlayers() {
     firstName: "Adrian",
     lastName: "Duszak",
     nickname: "",
-    age: 1,
+    birthYear: 1990,
     careerStartYear: 1,
     nationalityId: 1
   });
@@ -342,7 +342,7 @@ export async function createPlayers() {
     firstName: "Piotr",
     lastName: "Bujak",
     nickname: "",
-    age: 1,
+    birthYear: 1990,
     careerStartYear: 1,
     nationalityId: 1
   });
@@ -351,7 +351,7 @@ export async function createPlayers() {
     firstName: "Emil",
     lastName: "Wysocki",
     nickname: "",
-    age: 1,
+    birthYear: 1990,
     careerStartYear: 1,
     nationalityId: 1
   });
@@ -360,7 +360,7 @@ export async function createPlayers() {
     firstName: "Marcin",
     lastName: "Kaczmarek",
     nickname: "Marten",
-    age: 1,
+    birthYear: 1990,
     careerStartYear: 1,
     nationalityId: 1
   });
@@ -369,7 +369,7 @@ export async function createPlayers() {
     firstName: "Jakub",
     lastName: "Makowski",
     nickname: "Maki",
-    age: 1,
+    birthYear: 1990,
     careerStartYear: 1,
     nationalityId: 1
   });
@@ -378,7 +378,7 @@ export async function createPlayers() {
     firstName: "Ksawery",
     lastName: "Mielniczuk",
     nickname: "",
-    age: 1,
+    birthYear: 1990,
     careerStartYear: 1,
     nationalityId: 1
   });
@@ -387,7 +387,7 @@ export async function createPlayers() {
     firstName: "Robert",
     lastName: "Bejda",
     nickname: "Robik",
-    age: 1,
+    birthYear: 1990,
     careerStartYear: 1,
     nationalityId: 1
   });
@@ -396,7 +396,7 @@ export async function createPlayers() {
     firstName: "Stanisław",
     lastName: "Wysowski",
     nickname: "Staszko",
-    age: 1,
+    birthYear: 1990,
     careerStartYear: 1,
     nationalityId: 1
   });
@@ -405,7 +405,7 @@ export async function createPlayers() {
     firstName: "Konrad",
     lastName: "Dybaś",
     nickname: "Kondzio",
-    age: 1,
+    birthYear: 1990,
     careerStartYear: 1,
     nationalityId: 1
   });
@@ -414,7 +414,7 @@ export async function createPlayers() {
     firstName: "Adam",
     lastName: "Zaworski",
     nickname: "AZ",
-    age: 1,
+    birthYear: 1990,
     careerStartYear: 1,
     nationalityId: 1
   });
@@ -423,7 +423,7 @@ export async function createPlayers() {
     firstName: "Mateusz",
     lastName: "Przeznak",
     nickname: "Cheetos",
-    age: 1,
+    birthYear: 1990,
     careerStartYear: 1,
     nationalityId: 1
   });
@@ -432,7 +432,7 @@ export async function createPlayers() {
     firstName: "Cyprian",
     lastName: "Mikita",
     nickname: "Cypro",
-    age: 1,
+    birthYear: 1990,
     careerStartYear: 1,
     nationalityId: 1
   });
@@ -441,7 +441,7 @@ export async function createPlayers() {
     firstName: "Piotr",
     lastName: "Biernacki",
     nickname: "",
-    age: 1,
+    birthYear: 1990,
     careerStartYear: 1,
     nationalityId: 1
   });
