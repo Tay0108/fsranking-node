@@ -10,7 +10,7 @@ export class PlayerService {
       firstName,
       lastName,
       nickname,
-      age,
+      birthYear,
       careerStartYear
     }: PlayerAttributes,
     transaction?
@@ -21,7 +21,7 @@ export class PlayerService {
         firstName,
         lastName,
         nickname,
-        age,
+        birthYear,
         careerStartYear
       },
       { transaction }
@@ -52,7 +52,7 @@ export class PlayerService {
       firstName,
       lastName,
       nickname,
-      age,
+      birthYear,
       careerStartYear
     }: PlayerAttributes,
     transaction?
@@ -63,7 +63,7 @@ export class PlayerService {
         firstName,
         lastName,
         nickname,
-        age,
+        birthYear,
         careerStartYear
       },
       { where: { id }, transaction }
