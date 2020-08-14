@@ -12,6 +12,31 @@ const debug = require("debug")("mock.db");
 
 /* IMPORTANT: DO NOT CHANGE ORDER! ADD DATA AT THE END! */
 
+export async function createNationalities() {
+  debug("creating nationalities starting...");
+
+  await Nationality.create({
+    abbreviation: "pl",
+    name: "Poland"
+  });
+  await Nationality.create({
+    abbreviation: "de",
+    name: "Germany"
+  });
+  await Nationality.create({
+    abbreviation: "se",
+    name: "Sweden"
+  });
+  await Nationality.create({
+    abbreviation: "no",
+    name: "Norway"
+  });
+  await Nationality.create({
+    abbreviation: "fr",
+    name: "France"
+  });
+}
+
 export async function createPlayers() {
   debug("creating players starting...");
 
@@ -21,7 +46,8 @@ export async function createPlayers() {
     lastName: "Skalski",
     nickname: "Szymo",
     age: 1,
-    careerStartYear: 1
+    careerStartYear: 1,
+    nationalityId: 1
   });
   await Player.create({
     gender: "Male",
@@ -29,7 +55,8 @@ export async function createPlayers() {
     lastName: "Skóra",
     nickname: "Skóra",
     age: 1,
-    careerStartYear: 1
+    careerStartYear: 1,
+    nationalityId: 1
   });
   await Player.create({
     gender: "Male",
@@ -37,7 +64,8 @@ export async function createPlayers() {
     lastName: "Golonka",
     nickname: "Clyde",
     age: 1,
-    careerStartYear: 1
+    careerStartYear: 1,
+    nationalityId: 1
   });
   await Player.create({
     gender: "Male",
@@ -45,7 +73,8 @@ export async function createPlayers() {
     lastName: "Lebiocki",
     nickname: "Lebioda",
     age: 1,
-    careerStartYear: 1
+    careerStartYear: 1,
+    nationalityId: 1
   });
   await Player.create({
     gender: "Male",
@@ -53,7 +82,8 @@ export async function createPlayers() {
     lastName: "Skalski",
     nickname: "Skała",
     age: 1,
-    careerStartYear: 1
+    careerStartYear: 1,
+    nationalityId: 1
   });
   await Player.create({
     gender: "Male",
@@ -61,7 +91,8 @@ export async function createPlayers() {
     lastName: "Tyczkowski",
     nickname: "Tycza",
     age: 1,
-    careerStartYear: 1
+    careerStartYear: 1,
+    nationalityId: 1
   });
   await Player.create({
     gender: "Male",
@@ -69,7 +100,8 @@ export async function createPlayers() {
     lastName: "Rycaj",
     nickname: "MichRyc",
     age: 1,
-    careerStartYear: 1
+    careerStartYear: 1,
+    nationalityId: 1
   });
   await Player.create({
     gender: "Male",
@@ -77,7 +109,8 @@ export async function createPlayers() {
     lastName: "Biegun",
     nickname: "Zegan",
     age: 1,
-    careerStartYear: 1
+    careerStartYear: 1,
+    nationalityId: 1
   });
   await Player.create({
     gender: "Male",
@@ -85,7 +118,8 @@ export async function createPlayers() {
     lastName: "Teper",
     nickname: "CNK",
     age: 1,
-    careerStartYear: 1
+    careerStartYear: 1,
+    nationalityId: 1
   });
   await Player.create({
     gender: "Male",
@@ -93,7 +127,8 @@ export async function createPlayers() {
     lastName: "Chwieduk",
     nickname: "Luki",
     age: 1,
-    careerStartYear: 1
+    careerStartYear: 1,
+    nationalityId: 1
   });
   await Player.create({
     gender: "Male",
@@ -101,7 +136,8 @@ export async function createPlayers() {
     lastName: "Ziomek",
     nickname: "Ziomal",
     age: 1,
-    careerStartYear: 1
+    careerStartYear: 1,
+    nationalityId: 1
   });
   await Player.create({
     gender: "Male",
@@ -109,7 +145,8 @@ export async function createPlayers() {
     lastName: "Rak",
     nickname: "Kalaputa",
     age: 1,
-    careerStartYear: 1
+    careerStartYear: 1,
+    nationalityId: 1
   });
   await Player.create({
     gender: "Male",
@@ -117,7 +154,8 @@ export async function createPlayers() {
     lastName: "Mikołajek",
     nickname: "Mikołaj",
     age: 1,
-    careerStartYear: 1
+    careerStartYear: 1,
+    nationalityId: 1
   });
   await Player.create({
     gender: "Male",
@@ -125,7 +163,8 @@ export async function createPlayers() {
     lastName: "Zdunek",
     nickname: "Radox",
     age: 1,
-    careerStartYear: 1
+    careerStartYear: 1,
+    nationalityId: 1
   });
   await Player.create({
     gender: "Male",
@@ -133,7 +172,8 @@ export async function createPlayers() {
     lastName: "Kowal",
     nickname: "Danielson",
     age: 1,
-    careerStartYear: 1
+    careerStartYear: 1,
+    nationalityId: 1
   });
   await Player.create({
     gender: "Male",
@@ -141,7 +181,8 @@ export async function createPlayers() {
     lastName: "Cherek",
     nickname: "Oli",
     age: 1,
-    careerStartYear: 1
+    careerStartYear: 1,
+    nationalityId: 1
   });
   await Player.create({
     gender: "Male",
@@ -149,7 +190,8 @@ export async function createPlayers() {
     lastName: "Długołęcki",
     nickname: "Q100m",
     age: 1,
-    careerStartYear: 1
+    careerStartYear: 1,
+    nationalityId: 1
   });
   await Player.create({
     gender: "Male",
@@ -157,7 +199,8 @@ export async function createPlayers() {
     lastName: "Karaś",
     nickname: "Karaś",
     age: 1,
-    careerStartYear: 1
+    careerStartYear: 1,
+    nationalityId: 1
   });
   await Player.create({
     gender: "Male",
@@ -165,7 +208,8 @@ export async function createPlayers() {
     lastName: "Odrzygóźdź",
     nickname: "Lotar",
     age: 1,
-    careerStartYear: 1
+    careerStartYear: 1,
+    nationalityId: 1
   });
   await Player.create({
     gender: "Male",
@@ -173,7 +217,8 @@ export async function createPlayers() {
     lastName: "Krzyżowski",
     nickname: "Kojak",
     age: 1,
-    careerStartYear: 1
+    careerStartYear: 1,
+    nationalityId: 1
   });
   await Player.create({
     gender: "Male",
@@ -181,7 +226,8 @@ export async function createPlayers() {
     lastName: "Związek",
     nickname: "Zdzichu",
     age: 1,
-    careerStartYear: 1
+    careerStartYear: 1,
+    nationalityId: 1
   });
   await Player.create({
     gender: "Male",
@@ -189,7 +235,8 @@ export async function createPlayers() {
     lastName: "Wierzchowski",
     nickname: "Wieszak",
     age: 1,
-    careerStartYear: 1
+    careerStartYear: 1,
+    nationalityId: 1
   });
   await Player.create({
     gender: "Male",
@@ -197,7 +244,8 @@ export async function createPlayers() {
     lastName: "Koczur",
     nickname: "DaKo",
     age: 1,
-    careerStartYear: 1
+    careerStartYear: 1,
+    nationalityId: 1
   });
   await Player.create({
     gender: "Male",
@@ -205,7 +253,8 @@ export async function createPlayers() {
     lastName: "Kwit",
     nickname: "Ronnie",
     age: 1,
-    careerStartYear: 1
+    careerStartYear: 1,
+    nationalityId: 1
   });
   await Player.create({
     gender: "Male",
@@ -213,7 +262,8 @@ export async function createPlayers() {
     lastName: "Chudziński",
     nickname: "Fichu",
     age: 1,
-    careerStartYear: 1
+    careerStartYear: 1,
+    nationalityId: 1
   });
   await Player.create({
     gender: "Male",
@@ -221,7 +271,8 @@ export async function createPlayers() {
     lastName: "Nowikowski",
     nickname: "Błażej",
     age: 1,
-    careerStartYear: 1
+    careerStartYear: 1,
+    nationalityId: 1
   });
   await Player.create({
     gender: "Male",
@@ -229,7 +280,8 @@ export async function createPlayers() {
     lastName: "Kokot",
     nickname: "",
     age: 1,
-    careerStartYear: 1
+    careerStartYear: 1,
+    nationalityId: 1
   });
   await Player.create({
     gender: "Male",
@@ -237,7 +289,8 @@ export async function createPlayers() {
     lastName: "Franc",
     nickname: "Franek",
     age: 1,
-    careerStartYear: 1
+    careerStartYear: 1,
+    nationalityId: 1
   });
   await Player.create({
     gender: "Male",
@@ -245,7 +298,8 @@ export async function createPlayers() {
     lastName: "Guzik",
     nickname: "Guzik",
     age: 1,
-    careerStartYear: 1
+    careerStartYear: 1,
+    nationalityId: 1
   });
   await Player.create({
     gender: "Male",
@@ -253,7 +307,8 @@ export async function createPlayers() {
     lastName: "Czaja",
     nickname: "",
     age: 1,
-    careerStartYear: 1
+    careerStartYear: 1,
+    nationalityId: 1
   });
   await Player.create({
     gender: "Male",
@@ -261,7 +316,8 @@ export async function createPlayers() {
     lastName: "Kościelny",
     nickname: "Staniu",
     age: 1,
-    careerStartYear: 1
+    careerStartYear: 1,
+    nationalityId: 1
   });
   await Player.create({
     gender: "Male",
@@ -269,7 +325,8 @@ export async function createPlayers() {
     lastName: "Poprawa",
     nickname: "JRK",
     age: 1,
-    careerStartYear: 1
+    careerStartYear: 1,
+    nationalityId: 1
   });
   await Player.create({
     gender: "Male",
@@ -277,7 +334,8 @@ export async function createPlayers() {
     lastName: "Duszak",
     nickname: "",
     age: 1,
-    careerStartYear: 1
+    careerStartYear: 1,
+    nationalityId: 1
   });
   await Player.create({
     gender: "Male",
@@ -285,7 +343,8 @@ export async function createPlayers() {
     lastName: "Bujak",
     nickname: "",
     age: 1,
-    careerStartYear: 1
+    careerStartYear: 1,
+    nationalityId: 1
   });
   await Player.create({
     gender: "Male",
@@ -293,7 +352,8 @@ export async function createPlayers() {
     lastName: "Wysocki",
     nickname: "",
     age: 1,
-    careerStartYear: 1
+    careerStartYear: 1,
+    nationalityId: 1
   });
   await Player.create({
     gender: "Male",
@@ -301,7 +361,8 @@ export async function createPlayers() {
     lastName: "Kaczmarek",
     nickname: "Marten",
     age: 1,
-    careerStartYear: 1
+    careerStartYear: 1,
+    nationalityId: 1
   });
   await Player.create({
     gender: "Male",
@@ -309,7 +370,8 @@ export async function createPlayers() {
     lastName: "Makowski",
     nickname: "Maki",
     age: 1,
-    careerStartYear: 1
+    careerStartYear: 1,
+    nationalityId: 1
   });
   await Player.create({
     gender: "Male",
@@ -317,7 +379,8 @@ export async function createPlayers() {
     lastName: "Mielniczuk",
     nickname: "",
     age: 1,
-    careerStartYear: 1
+    careerStartYear: 1,
+    nationalityId: 1
   });
   await Player.create({
     gender: "Male",
@@ -325,7 +388,8 @@ export async function createPlayers() {
     lastName: "Bejda",
     nickname: "Robik",
     age: 1,
-    careerStartYear: 1
+    careerStartYear: 1,
+    nationalityId: 1
   });
   await Player.create({
     gender: "Male",
@@ -333,7 +397,8 @@ export async function createPlayers() {
     lastName: "Wysowski",
     nickname: "Staszko",
     age: 1,
-    careerStartYear: 1
+    careerStartYear: 1,
+    nationalityId: 1
   });
   await Player.create({
     gender: "Male",
@@ -341,7 +406,8 @@ export async function createPlayers() {
     lastName: "Dybaś",
     nickname: "Kondzio",
     age: 1,
-    careerStartYear: 1
+    careerStartYear: 1,
+    nationalityId: 1
   });
   await Player.create({
     gender: "Male",
@@ -349,7 +415,8 @@ export async function createPlayers() {
     lastName: "Zaworski",
     nickname: "AZ",
     age: 1,
-    careerStartYear: 1
+    careerStartYear: 1,
+    nationalityId: 1
   });
   await Player.create({
     gender: "Male",
@@ -357,7 +424,8 @@ export async function createPlayers() {
     lastName: "Przeznak",
     nickname: "Cheetos",
     age: 1,
-    careerStartYear: 1
+    careerStartYear: 1,
+    nationalityId: 1
   });
   await Player.create({
     gender: "Male",
@@ -365,7 +433,8 @@ export async function createPlayers() {
     lastName: "Mikita",
     nickname: "Cypro",
     age: 1,
-    careerStartYear: 1
+    careerStartYear: 1,
+    nationalityId: 1
   });
   await Player.create({
     gender: "Male",
@@ -373,7 +442,8 @@ export async function createPlayers() {
     lastName: "Biernacki",
     nickname: "",
     age: 1,
-    careerStartYear: 1
+    careerStartYear: 1,
+    nationalityId: 1
   });
 }
 
@@ -775,26 +845,6 @@ export async function createTournaments() {
     name: "Skawina 2017",
     weight: 3,
     date: new Date(2017, 0, 1)
-  });
-}
-
-export async function createNationalities() {
-  debug("creating nationalities starting...");
-
-  await Nationality.create({
-    name: "Poland"
-  });
-  await Nationality.create({
-    name: "Germany"
-  });
-  await Nationality.create({
-    name: "Sweden"
-  });
-  await Nationality.create({
-    name: "Norway"
-  });
-  await Nationality.create({
-    name: "France"
   });
 }
 
