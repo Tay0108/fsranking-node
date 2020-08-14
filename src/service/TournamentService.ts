@@ -1,5 +1,5 @@
 import { TournamentAttributes } from "../model/tournamentModel";
-import { Category, Tournament, Result } from "../model";
+import { Category, Tournament, Result, Location } from "../model";
 import { CategoryResult } from "../types/types";
 
 const debug = require("debug")("tournament.service");
@@ -28,6 +28,19 @@ export class TournamentService {
 
   getAll(transaction?) {
     return Tournament.findAll({ transaction });
+  }
+
+  getAllWithLocation(transaction?) {
+    return Tournament.findAll({
+      transaction,
+      raw: true,
+      nest: true,
+      include: [
+        {
+          model: Location
+        }
+      ]
+    });
   }
 
   async delete(tournamentId: number, transaction?) {
