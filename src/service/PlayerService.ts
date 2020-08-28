@@ -1,5 +1,5 @@
 import { PlayerAttributes } from "../model/playerModel";
-import { Player } from "../model";
+import { Nationality, Player, Tournament } from "../model";
 
 const debug = require("debug")("player.service");
 
@@ -30,6 +30,19 @@ export class PlayerService {
 
   getById(playerId: number, transaction?) {
     return Player.findByPk(playerId, { transaction });
+  }
+
+  getByIdWithNationality(playerId: number, transaction?) {
+    return Player.findByPk(playerId, {
+      transaction,
+      raw: true,
+      nest: true,
+      include: [
+        {
+          model: Nationality
+        }
+      ]
+    });
   }
 
   getAll(transaction?) {
