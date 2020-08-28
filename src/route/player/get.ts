@@ -17,7 +17,7 @@ const playerRoutes = {
   getById: async (req, res) => {
     try {
       const id = req.params.id;
-      const player = await playerService.getById(id);
+      const player = await playerService.getByIdWithNationality(id);
       res.json(player);
     } catch (error) {
       debug(error);
