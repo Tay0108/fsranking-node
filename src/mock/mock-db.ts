@@ -47,7 +47,8 @@ export async function createPlayers() {
     nickname: "Szymo",
     birthYear: 1990,
     careerStartYear: 1,
-    nationalityId: 1
+    nationalityId: 1,
+    bio: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam rhoncus dui id metus facilisis, at lobortis augue laoreet. In vel dolor nibh. Sed tellus leo, bibendum at ornare ac, sagittis nec massa. Donec tristique placerat diam. Aenean euismod metus vel arcu tincidunt euismod. Aliquam mattis massa sapien. Nam commodo, arcu eget bibendum euismod, ligula justo pulvinar mauris, eget bibendum elit dui eu sem. Nunc et lectus quis mauris malesuada venenatis. Sed vel elit magna. Curabitur sed est diam. Curabitur ac sollicitudin urna, a posuere est. Nullam ac ipsum id sapien malesuada tincidunt ac non mauris."
   });
   await Player.create({
     gender: "Male",
