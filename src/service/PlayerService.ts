@@ -1,5 +1,7 @@
 import { PlayerAttributes } from "../model/playerModel";
-import { Nationality, Player, Tournament } from "../model";
+import { Nationality, Player, Result, Tournament } from "../model";
+import { PlayerStatistics } from "../types/types";
+import { Op } from "sequelize";
 
 const debug = require("debug")("player.service");
 
@@ -47,6 +49,44 @@ export class PlayerService {
 
   getAll(transaction?) {
     return Player.findAll({ transaction });
+  }
+
+  async getPlayerStatistics(
+    playerId: number,
+    transaction?
+  ): Promise<PlayerStatistics> {
+    // TODO: add also statistics by category
+    const starts = await Result.count({
+      where: {
+        playerId
+      },
+      transaction
+    });
+    const podiums = await Result.count({
+      where: {
+        playerId,
+        [Op.or]: [
+          {
+            place: {
+              [Op.between]: [1, 3]
+            }
+          }
+        ]
+      },
+      transaction
+    });
+    const victories = await Result.count({
+      where: {
+        playerId,
+        place: 1
+      },
+      transaction
+    });
+    return {
+      starts,
+      podiums,
+      victories
+    };
   }
 
   async delete(playerId: number, transaction?) {

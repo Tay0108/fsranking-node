@@ -1,4 +1,5 @@
 import { PlayerService } from "../../service/PlayerService";
+import { dbConfig } from "../../model";
 
 const debug = require("debug")("player.get");
 
@@ -17,7 +18,25 @@ const playerRoutes = {
   getById: async (req, res) => {
     try {
       const id = req.params.id;
-      const player = await playerService.getByIdWithNationality(id);
+
+      const player = await dbConfig.transaction(async (transaction) => {
+        const playerData = await playerService.getByIdWithNationality(
+          id,
+          transaction
+        );
+
+        if (playerData === null) {
+          throw new Error("Player of given id not found.");
+        }
+
+        playerData.statistics = await playerService.getPlayerStatistics(
+          id,
+          transaction
+        );
+
+        return playerData;
+      });
+
       res.json(player);
     } catch (error) {
       debug(error);
