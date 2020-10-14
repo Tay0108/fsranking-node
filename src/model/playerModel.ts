@@ -8,6 +8,7 @@ export interface PlayerAttributes {
   nickname: string;
   birthYear: number;
   careerStartYear: number;
+  bio: string;
 }
 
 export interface PlayerModel
@@ -48,6 +49,10 @@ export function playerFactory(sequelize: Sequelize): PlayerStatic {
     },
     careerStartYear: {
       type: DataTypes.INTEGER.UNSIGNED,
+      allowNull: true
+    },
+    bio : {
+      type: DataTypes.TEXT,
       allowNull: true
     },
     createdAt: {
