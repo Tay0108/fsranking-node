@@ -8,6 +8,7 @@ import { categoryFactory } from "./categoryModel";
 import { tournamentHasCategoryFactory } from "./tournamentHasCategoryModel";
 import { socialMediaFactory } from "./socialMediaModel";
 import { placeToPointsFactory } from "./placeToPointsModel";
+import { userFactory } from "./userModel";
 
 export const dbConfig = new sequelize.Sequelize(
   process.env.DB_NAME,
@@ -38,6 +39,7 @@ export const SocialMedia = socialMediaFactory(dbConfig);
 export const Player = playerFactory(dbConfig);
 export const Result = resultFactory(dbConfig);
 export const PlaceToPoints = placeToPointsFactory(dbConfig);
+export const User = userFactory(dbConfig);
 
 // Relationships:
 
