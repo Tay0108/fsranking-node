@@ -9,8 +9,7 @@ import {
   User
 } from "../model";
 
-const bcrypt = require('bcrypt');
-
+const bcrypt = require("bcrypt");
 
 const debug = require("debug")("mock.db");
 
@@ -21,19 +20,19 @@ export async function createUsers() {
   const password2 = "password2";
   const saltRounds = 10;
 
-  bcrypt.hash(password1, saltRounds, function(err, hash) {
+  bcrypt.hash(password1, saltRounds, function (err, hash) {
     User.create({
       email: "taysonity@gmail.com",
       login: "Tay",
-      password: hash,
+      password: hash
     });
   });
 
-  bcrypt.hash(password2, saltRounds, function(err, hash) {
+  bcrypt.hash(password2, saltRounds, function (err, hash) {
     User.create({
       email: "",
       login: "fsranking_admin",
-      password: hash,
+      password: hash
     });
   });
 }
