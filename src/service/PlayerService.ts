@@ -2,6 +2,7 @@ import { PlayerAttributes } from "../model/playerModel";
 import { Nationality, Player, Result, Tournament } from "../model";
 import { PlayerStatistics } from "../types/types";
 import { Op } from "sequelize";
+import { TournamentAttributes } from "../model/tournamentModel";
 
 const debug = require("debug")("player.service");
 
@@ -87,6 +88,17 @@ export class PlayerService {
       podiums,
       victories
     };
+  }
+
+  async getPlayerHistory(id, transaction): Promise<Array<TournamentAttributes>> {
+    const playerResults = await Result.findAll({
+      where: {
+        playerId: id
+      },
+      include: [Tournament],
+      transaction
+    });
+    return playerResults;
   }
 
   async delete(playerId: number, transaction?) {
