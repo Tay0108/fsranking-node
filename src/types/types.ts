@@ -8,10 +8,3 @@ export interface PlayerStatistics {
   podiums: number;
   victories: number;
 }
-
-export interface PlayerHistoryEntry {
-  place: number;
-  tournamentName: string;
-  date: string;
-  points: number;
-}
