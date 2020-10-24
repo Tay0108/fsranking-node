@@ -34,6 +34,8 @@ const playerRoutes = {
           transaction
         );
 
+        playerData.history = await playerService.getPlayerHistory(id, transaction);
+
         return playerData;
       });
 
