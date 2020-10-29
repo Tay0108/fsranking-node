@@ -1,5 +1,11 @@
 import { PlayerAttributes } from "../model/playerModel";
-import { Nationality, Player, Result, Tournament } from "../model";
+import {
+  Nationality,
+  PlaceToPoints,
+  Player,
+  Result,
+  Tournament
+} from "../model";
 import { PlayerStatistics } from "../types/types";
 import { Op } from "sequelize";
 import { TournamentAttributes } from "../model/tournamentModel";
@@ -90,15 +96,40 @@ export class PlayerService {
     };
   }
 
-  async getPlayerHistory(id, transaction): Promise<Array<TournamentAttributes>> {
+  async getPlayerHistory(
+    id,
+    transaction
+  ): Promise<Array<TournamentAttributes>> {
     const playerResults = await Result.findAll({
       where: {
         playerId: id
       },
-      include: [Tournament],
+      raw: true,
+      include: [
+        {
+          model: Tournament,
+          attributes: ["weight", "name", "date"]
+        }
+      ],
       transaction
     });
-    return playerResults;
+
+    const placeToPoints = await PlaceToPoints.findAll();
+
+    const history = playerResults.map((result) => {
+      const basePoints = placeToPoints.find(
+        (data) => data.place === result.place
+      ).points;
+      return {
+        ...result,
+        "tournament.date": result["tournament.date"]
+          .toISOString()
+          .split("T")[0],
+        points: basePoints * result["tournament.weight"]
+      };
+    });
+
+    return history;
   }
 
   async delete(playerId: number, transaction?) {
