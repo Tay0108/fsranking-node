@@ -1,5 +1,4 @@
 import { TournamentService } from "../../service/TournamentService";
-import { Tournament } from "../../model";
 import { TournamentAttributes } from "../../model/tournamentModel";
 
 const debug = require("debug")("tournament.get");
