@@ -1,5 +1,5 @@
 import { TournamentAttributes } from "../model/tournamentModel";
-import { Category, Tournament, Result, Location } from "../model";
+import { Category, Location, PlaceToPoints, Player, Result, Tournament } from "../model";
 import { CategoryResult } from "../types/types";
 
 const debug = require("debug")("tournament.service");
@@ -15,15 +15,40 @@ export class TournamentService {
     );
   }
 
-  getById(tournamentId: number, transaction?) {
-    return Tournament.findByPk(tournamentId, {
+  async getById(tournamentId: number, transaction?) {
+    const placeToPoints = await PlaceToPoints.findAll({
+      raw: true,
+      transaction
+    });
+
+
+
+    const tournament = Tournament.findByPk(tournamentId, {
       include: [
         {
-          model: Category
+          model: Category,
+          through: { attributes: [] },
+          include: [
+            {
+              model: Result,
+              where: {
+                tournamentId: tournamentId
+              },
+              attributes: ["playerId", "place"],
+              include: [
+                {
+                  model: Player,
+                  attributes: ["firstName", "lastName"]
+                }
+              ]
+            }
+          ]
         }
       ],
       transaction
     });
+
+    return tournament;
   }
 
   getAll(transaction?) {
