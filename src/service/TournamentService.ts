@@ -1,5 +1,5 @@
 import { TournamentAttributes } from "../model/tournamentModel";
-import { Category, Tournament, Result, Location } from "../model";
+import { Category, Location, Result, Tournament } from "../model";
 import { CategoryResult } from "../types/types";
 
 const debug = require("debug")("tournament.service");
@@ -19,7 +19,16 @@ export class TournamentService {
     return Tournament.findByPk(tournamentId, {
       include: [
         {
-          model: Category
+          model: Category,
+          through: { attributes: [] },
+          include: [
+            {
+              model: Result,
+              where: {
+                tournamentId: tournamentId
+              }
+            }
+          ]
         }
       ],
       transaction

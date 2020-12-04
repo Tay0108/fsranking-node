@@ -47,7 +47,11 @@ Player.belongsTo(Nationality);
 Player.belongsTo(SocialMedia);
 
 Tournament.belongsTo(Location);
+
 Tournament.belongsToMany(Category, {
+  through: { model: TournamentHasCategory }
+});
+Category.belongsToMany(Tournament, {
   through: { model: TournamentHasCategory }
 });
 
@@ -55,4 +59,6 @@ Result.belongsTo(Tournament);
 Result.belongsTo(Player);
 Result.belongsTo(Category);
 
-// Tournament.hasMany();
+Tournament.hasMany(Result);
+Player.hasMany(Result);
+Category.hasMany(Result);

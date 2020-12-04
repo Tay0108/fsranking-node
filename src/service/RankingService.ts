@@ -53,6 +53,13 @@ export class RankingService {
       players = await Player.findAll({
         where: { gender },
         raw: true,
+        nest: true,
+        include: [
+          {
+            model: Nationality,
+            attributes: ["id", "name", "abbreviation"]
+          }
+        ],
         transaction
       });
     }
