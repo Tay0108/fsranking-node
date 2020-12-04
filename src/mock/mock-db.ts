@@ -1256,6 +1256,7 @@ export async function createLocations() {
 
 export async function createResults() {
   debug("creating results starting...");
+  // Zawiercie 2007:
   await Result.create({
     tournamentId: 1,
     categoryId: 1,
