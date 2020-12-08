@@ -17,7 +17,7 @@ const playerRoutes = {
 
   getById: async (req, res) => {
     try {
-      const id = req.params.id;
+      const id : number = +req.params.id;
 
       const player = await dbConfig.transaction(async (transaction) => {
         const playerData = await playerService.getByIdWithNationality(
@@ -35,6 +35,9 @@ const playerRoutes = {
         );
 
         playerData.history = await playerService.getPlayerHistory(id, transaction);
+
+        // TODO: can it be done faster?
+        playerData.rankingPlace = await playerService.getPlayerRankingPlace(id, transaction);
 
         return playerData;
       });

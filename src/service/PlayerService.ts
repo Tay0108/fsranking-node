@@ -9,8 +9,11 @@ import {
 import { PlayerStatistics } from "../types/types";
 import { Op } from "sequelize";
 import { TournamentAttributes } from "../model/tournamentModel";
+import { RankingService } from "./RankingService";
 
 const debug = require("debug")("player.service");
+
+const rankingService = new RankingService();
 
 export class PlayerService {
   create(
@@ -56,6 +59,12 @@ export class PlayerService {
 
   getAll(transaction?) {
     return Player.findAll({ transaction });
+  }
+
+  async getPlayerRankingPlace(playerId: number, transaction?) {
+    const ranking = await rankingService.get(1, transaction);
+    const player = ranking.find(rankingEntry => playerId === rankingEntry.id);
+    return player.place;
   }
 
   async getPlayerStatistics(
