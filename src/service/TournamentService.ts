@@ -21,8 +21,6 @@ export class TournamentService {
       transaction
     });
 
-
-
     const tournament = Tournament.findByPk(tournamentId, {
       include: [
         {
@@ -35,6 +33,8 @@ export class TournamentService {
                 tournamentId: tournamentId
               },
               attributes: ["playerId", "place"],
+              separate: true, // TODO: maybe can be improved in the future to sort without separate query
+              order: [["place", "ASC"]],
               include: [
                 {
                   model: Player,

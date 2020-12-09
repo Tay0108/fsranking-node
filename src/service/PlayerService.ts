@@ -63,8 +63,11 @@ export class PlayerService {
 
   async getPlayerRankingPlace(playerId: number, transaction?) {
     const ranking = await rankingService.get(1, transaction);
-    const player = ranking.find(rankingEntry => playerId === rankingEntry.id);
-    return player.place;
+    const player = ranking.find((rankingEntry) => playerId === rankingEntry.id);
+    if (player) {
+      return player.place;
+    }
+    return null;
   }
 
   async getPlayerStatistics(
