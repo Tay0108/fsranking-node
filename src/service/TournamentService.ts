@@ -33,7 +33,7 @@ export class TournamentService {
                 tournamentId: tournamentId
               },
               attributes: ["playerId", "place"],
-              separate: true, // TODO: maybe can be improved in the future to sort wtihout separate query
+              separate: true, // TODO: maybe can be improved in the future to sort without separate query
               order: [["place", "ASC"]],
               include: [
                 {
