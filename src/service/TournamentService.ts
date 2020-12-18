@@ -5,11 +5,10 @@ import { CategoryResult } from "../types/types";
 const debug = require("debug")("tournament.service");
 
 export class TournamentService {
-  create({ name, weight }: TournamentAttributes, transaction?) {
+  create({ name }: TournamentAttributes, transaction?) {
     return Tournament.create(
       {
-        name,
-        weight
+        name
       },
       { transaction }
     );

@@ -3,7 +3,6 @@ import { BuildOptions, DataTypes, Model, Sequelize } from "sequelize";
 export interface TournamentAttributes {
   id: number;
   name: string;
-  weight: number;
   date: Date;
 }
 
