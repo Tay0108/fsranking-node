@@ -9,6 +9,7 @@ import { tournamentHasCategoryFactory } from "./tournamentHasCategoryModel";
 import { socialMediaFactory } from "./socialMediaModel";
 import { placeToPointsFactory } from "./placeToPointsModel";
 import { userFactory } from "./userModel";
+import { tournamentTierFactory } from "./tournamentTierModel";
 
 export const dbConfig = new sequelize.Sequelize(
   process.env.DB_NAME,
@@ -40,6 +41,7 @@ export const Player = playerFactory(dbConfig);
 export const Result = resultFactory(dbConfig);
 export const PlaceToPoints = placeToPointsFactory(dbConfig);
 export const User = userFactory(dbConfig);
+export const TournamentTier = tournamentTierFactory(dbConfig);
 
 // Relationships:
 
@@ -47,6 +49,7 @@ Player.belongsTo(Nationality);
 Player.belongsTo(SocialMedia);
 
 Tournament.belongsTo(Location);
+Tournament.belongsTo(TournamentTier);
 
 Tournament.belongsToMany(Category, {
   through: { model: TournamentHasCategory }
