@@ -30,10 +30,6 @@ export function tournamentFactory(sequelize: Sequelize): TournamentStatic {
       type: DataTypes.STRING,
       allowNull: false
     },
-    weight: {
-      type: DataTypes.INTEGER.UNSIGNED,
-      allowNull: false
-    },
     date: {
       type: DataTypes.DATE,
       allowNull: false

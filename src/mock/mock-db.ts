@@ -6,14 +6,33 @@ import {
   PlaceToPoints,
   Player,
   Result,
-  User
+  User,
+  TournamentTier
 } from "../model";
 
 const bcrypt = require("bcrypt");
 
 const debug = require("debug")("mock.db");
 
-/* IMPORTANT: DO NOT CHANGE ORDER! ADD DATA AT THE END! */
+export async function createTournamentTiers() {
+  debug("creating tournament tiers starting...");
+  await TournamentTier.create({
+    name: "Mistrzostwa Polski",
+    weight: 4
+  });
+  await TournamentTier.create({
+    name: "Puchar Polski",
+    weight: 3
+  });
+  await TournamentTier.create({
+    name: "Zawody Ogólnopolskie",
+    weight: 2
+  });
+  await TournamentTier.create({
+    name: "Zawody Lokalne",
+    weight: 1
+  });
+}
 
 export async function createUsers() {
   const password1 = "password1";
@@ -542,30 +561,65 @@ export async function createCategories() {
 export async function createTournaments() {
   debug("creating tournaments starting...");
   // categories:
-  const battleMale = await Category.findOne({where: { name: "Battle", gender: "Male"}});
-  const battleFemale = await Category.findOne({where: { name: "Battle", gender: "Female"}});
+  const battleMale = await Category.findOne({
+    where: { name: "Battle", gender: "Male" }
+  });
+  const battleFemale = await Category.findOne({
+    where: { name: "Battle", gender: "Female" }
+  });
   // const battleBoth = await Category.findOne({where: { name: "Battle", gender: "Both"}});
 
-  const challengeMale = await Category.findOne({where: { name: "Battle", gender: "Male"}});
-  const challengeFemale = await Category.findOne({where: { name: "Battle", gender: "Female"}});
+  const challengeMale = await Category.findOne({
+    where: { name: "Battle", gender: "Male" }
+  });
+  const challengeFemale = await Category.findOne({
+    where: { name: "Battle", gender: "Female" }
+  });
   // const challengeBoth = await Category.findOne({where: { name: "Battle", gender: "Both"}});
 
-  const ironManMale = await Category.findOne({where: { name: "Battle", gender: "Male"}});
-  const ironManFemale = await Category.findOne({where: { name: "Battle", gender: "Female"}});
+  const ironManMale = await Category.findOne({
+    where: { name: "Battle", gender: "Male" }
+  });
+  const ironManFemale = await Category.findOne({
+    where: { name: "Battle", gender: "Female" }
+  });
   // const ironManBoth = await Category.findOne({where: { name: "Battle", gender: "Both"}});
 
-  const routineMale = await Category.findOne({where: { name: "Battle", gender: "Male"}});
-  const routineFemale = await Category.findOne({where: { name: "Battle", gender: "Female"}});
+  const routineMale = await Category.findOne({
+    where: { name: "Battle", gender: "Male" }
+  });
+  const routineFemale = await Category.findOne({
+    where: { name: "Battle", gender: "Female" }
+  });
   // const routineBoth = await Category.findOne({where: { name: "Battle", gender: "Both"}});
 
-  const sick3Male = await Category.findOne({where: { name: "Battle", gender: "Male"}});
-  const sick3Female = await Category.findOne({where: { name: "Battle", gender: "Female"}});
+  const sick3Male = await Category.findOne({
+    where: { name: "Battle", gender: "Male" }
+  });
+  const sick3Female = await Category.findOne({
+    where: { name: "Battle", gender: "Female" }
+  });
   // const sick3Both = await Category.findOne({where: { name: "Battle", gender: "Both"}});
+
+  const tournamentTiers = await TournamentTier.findAll();
+
+  const polishChampionships = tournamentTiers.find(
+    (tier) => tier.name === "Mistrzostwa Polski"
+  );
+  const polishCup = tournamentTiers.find(
+    (tier) => tier.name === "Puchar Polski"
+  );
+  const polishTournament = tournamentTiers.find(
+    (tier) => tier.name === "Zawody Ogólnopolskie"
+  );
+  const localTournament = tournamentTiers.find(
+    (tier) => tier.name === "Zawody Lokalne"
+  );
 
   // real data:
   const zawiercie2007 = await Tournament.create({
     name: "Zawiercie 2007",
-    weight: 6,
+    tournamentTierId: polishChampionships.id,
     date: new Date(2007, 0, 1)
   });
 
@@ -573,6 +627,7 @@ export async function createTournaments() {
 
   const olkusz2008 = await Tournament.create({
     name: "Olkusz 2008",
+    tournamentTierId: polishTournament.id, // TODO: to be adjusted
     weight: 3,
     date: new Date(2008, 0, 1)
   });
@@ -581,6 +636,7 @@ export async function createTournaments() {
 
   const pyrzyce2008 = await Tournament.create({
     name: "Pyrzyce 2008",
+    tournamentTierId: polishTournament.id, // TODO: to be adjusted
     weight: 4,
     date: new Date(2008, 0, 1)
   });
@@ -588,7 +644,7 @@ export async function createTournaments() {
 
   const zawiercie2008 = await Tournament.create({
     name: "Zawiercie 2008",
-    weight: 6,
+    tournamentTierId: polishChampionships.id,
     date: new Date(2008, 0, 1)
   });
 
@@ -596,6 +652,7 @@ export async function createTournaments() {
 
   const jaktorow2009 = await Tournament.create({
     name: "Jaktorów 2009",
+    tournamentTierId: polishTournament.id, // TODO: to be adjusted
     weight: 2,
     date: new Date(2009, 0, 1)
   });
@@ -604,6 +661,7 @@ export async function createTournaments() {
 
   const kielce2009 = await Tournament.create({
     name: "Kielce 2009",
+    tournamentTierId: polishTournament.id, // TODO: to be adjusted
     weight: 2,
     date: new Date(2009, 0, 1)
   });
@@ -612,6 +670,7 @@ export async function createTournaments() {
 
   const olkusz2009 = await Tournament.create({
     name: "Olkusz 2009",
+    tournamentTierId: polishTournament.id, // TODO: to be adjusted
     weight: 3,
     date: new Date(2009, 0, 1)
   });
@@ -620,6 +679,7 @@ export async function createTournaments() {
 
   const pyrzyce2009 = await Tournament.create({
     name: "Pyrzyce 2009",
+    tournamentTierId: polishTournament.id, // TODO: to be adjusted
     weight: 4,
     date: new Date(2009, 0, 1)
   });
@@ -628,7 +688,7 @@ export async function createTournaments() {
 
   const rbss2009 = await Tournament.create({
     name: "RBSS 2009",
-    weight: 6,
+    tournamentTierId: polishChampionships.id,
     date: new Date(2009, 0, 1)
   });
 
@@ -636,6 +696,7 @@ export async function createTournaments() {
 
   const zawiercie2009 = await Tournament.create({
     name: "Zawiercie 2009",
+    tournamentTierId: polishTournament.id, // TODO: to be adjusted
     weight: 2,
     date: new Date(2009, 0, 1)
   });
@@ -644,7 +705,7 @@ export async function createTournaments() {
 
   const cieszyn2010 = await Tournament.create({
     name: "Cieszyn 2010",
-    weight: 6,
+    tournamentTierId: polishChampionships.id,
     date: new Date(2010, 0, 1)
   });
 
@@ -652,6 +713,7 @@ export async function createTournaments() {
 
   const jarocin2010 = await Tournament.create({
     name: "Jarocin 2010",
+    tournamentTierId: polishTournament.id, // TODO: to be adjusted
     weight: 5,
     date: new Date(2010, 0, 1)
   });
@@ -660,6 +722,7 @@ export async function createTournaments() {
 
   const lodz2010 = await Tournament.create({
     name: "Łódź 2010",
+    tournamentTierId: polishTournament.id, // TODO: to be adjusted
     weight: 2,
     date: new Date(2010, 0, 1)
   });
@@ -668,6 +731,7 @@ export async function createTournaments() {
 
   const miedzyzdroje2010 = await Tournament.create({
     name: "Międzyzdroje 2010",
+    tournamentTierId: polishTournament.id, // TODO: to be adjusted
     weight: 1,
     date: new Date(2010, 0, 1)
   });
@@ -676,6 +740,7 @@ export async function createTournaments() {
 
   const olkusz2010 = await Tournament.create({
     name: "Olkusz 2010",
+    tournamentTierId: polishTournament.id, // TODO: to be adjusted
     weight: 3,
     date: new Date(2010, 0, 1)
   });
@@ -684,6 +749,7 @@ export async function createTournaments() {
 
   const pyrzyce2010 = await Tournament.create({
     name: "Pyrzyce 2010",
+    tournamentTierId: polishTournament.id, // TODO: to be adjusted
     weight: 4,
     date: new Date(2010, 0, 1)
   });
@@ -692,6 +758,7 @@ export async function createTournaments() {
 
   const focus2011 = await Tournament.create({
     name: "Focus 2011",
+    tournamentTierId: polishTournament.id, // TODO: to be adjusted
     weight: 5,
     date: new Date(2011, 0, 1)
   });
@@ -700,6 +767,7 @@ export async function createTournaments() {
 
   const grassroots2011 = await Tournament.create({
     name: "Grassroots 2011",
+    tournamentTierId: polishTournament.id, // TODO: to be adjusted
     weight: 2,
     date: new Date(2011, 0, 1)
   });
@@ -708,6 +776,7 @@ export async function createTournaments() {
 
   const miedzyzdroje2011 = await Tournament.create({
     name: "Międzyzdroje 2011",
+    tournamentTierId: polishTournament.id, // TODO: to be adjusted
     weight: 1,
     date: new Date(2011, 0, 1)
   });
@@ -716,7 +785,7 @@ export async function createTournaments() {
 
   const myszkow2011 = await Tournament.create({
     name: "Myszków 2011",
-    weight: 6,
+    tournamentTierId: polishChampionships.id,
     date: new Date(2011, 0, 1)
   });
 
@@ -724,6 +793,7 @@ export async function createTournaments() {
 
   const pabianice2011 = await Tournament.create({
     name: "Pabianice 2011",
+    tournamentTierId: polishTournament.id, // TODO: to be adjusted
     weight: 1,
     date: new Date(2011, 0, 1)
   });
@@ -732,6 +802,7 @@ export async function createTournaments() {
 
   const zerkow2011 = await Tournament.create({
     name: "Żerków 2011",
+    tournamentTierId: polishTournament.id, // TODO: to be adjusted
     weight: 5,
     date: new Date(2011, 0, 1)
   });
@@ -740,6 +811,7 @@ export async function createTournaments() {
 
   const bytow2012 = await Tournament.create({
     name: "Bytów 2012",
+    tournamentTierId: polishTournament.id, // TODO: to be adjusted
     weight: 2,
     date: new Date(2012, 0, 1)
   });
@@ -748,6 +820,7 @@ export async function createTournaments() {
 
   const focus2012 = await Tournament.create({
     name: "Focus 2012",
+    tournamentTierId: polishTournament.id, // TODO: to be adjusted
     weight: 5,
     date: new Date(2012, 0, 1)
   });
@@ -756,7 +829,7 @@ export async function createTournaments() {
 
   const myszkow2012 = await Tournament.create({
     name: "Myszków 2012",
-    weight: 6,
+    tournamentTierId: polishChampionships.id,
     date: new Date(2012, 0, 1)
   });
 
@@ -764,6 +837,7 @@ export async function createTournaments() {
 
   const rbss2012 = await Tournament.create({
     name: "RBSS 2012",
+    tournamentTierId: polishTournament.id, // TODO: to be adjusted
     weight: 5,
     date: new Date(2012, 0, 1)
   });
@@ -772,6 +846,7 @@ export async function createTournaments() {
 
   const zerkow2012 = await Tournament.create({
     name: "Żerków 2012",
+    tournamentTierId: polishTournament.id, // TODO: to be adjusted
     weight: 5,
     date: new Date(2012, 0, 1)
   });
@@ -780,6 +855,7 @@ export async function createTournaments() {
 
   const battlemasters2013 = await Tournament.create({
     name: "Battlemasters Wrocław 2013",
+    tournamentTierId: polishTournament.id, // TODO: to be adjusted
     weight: 2,
     date: new Date(2013, 0, 1)
   });
@@ -788,7 +864,7 @@ export async function createTournaments() {
 
   const hs2013 = await Tournament.create({
     name: "H&S 2013",
-    weight: 6,
+    tournamentTierId: polishChampionships.id, // TODO: really?
     date: new Date(2013, 0, 1)
   });
 
@@ -796,6 +872,7 @@ export async function createTournaments() {
 
   const lfn2013 = await Tournament.create({
     name: "LFN 2013",
+    tournamentTierId: polishTournament.id, // TODO: to be adjusted
     weight: 4,
     date: new Date(2013, 0, 1)
   });
@@ -804,6 +881,7 @@ export async function createTournaments() {
 
   const plock2013 = await Tournament.create({
     name: "Płock 2013",
+    tournamentTierId: polishTournament.id, // TODO: to be adjusted
     weight: 2,
     date: new Date(2013, 0, 1)
   });
@@ -812,6 +890,7 @@ export async function createTournaments() {
 
   const zerkow2013 = await Tournament.create({
     name: "Żerków 2013",
+    tournamentTierId: polishTournament.id, // TODO: to be adjusted
     weight: 5,
     date: new Date(2013, 0, 1)
   });
@@ -820,6 +899,7 @@ export async function createTournaments() {
 
   const bytom2014 = await Tournament.create({
     name: "Bytom 2014",
+    tournamentTierId: polishTournament.id, // TODO: to be adjusted
     weight: 2,
     date: new Date(2014, 0, 1)
   });
@@ -828,6 +908,7 @@ export async function createTournaments() {
 
   const czarnkow2014 = await Tournament.create({
     name: "Czarnków 2014",
+    tournamentTierId: polishTournament.id, // TODO: to be adjusted
     weight: 2,
     date: new Date(2014, 0, 1)
   });
@@ -836,6 +917,7 @@ export async function createTournaments() {
 
   const miedzyzdroje2014 = await Tournament.create({
     name: "Międzyzdroje 2014",
+    tournamentTierId: polishTournament.id, // TODO: to be adjusted
     weight: 1,
     date: new Date(2014, 0, 1)
   });
@@ -844,7 +926,7 @@ export async function createTournaments() {
 
   const myszkow2014 = await Tournament.create({
     name: "Myszków 2014",
-    weight: 6,
+    tournamentTierId: polishChampionships.id,
     date: new Date(2014, 0, 1)
   });
 
@@ -852,6 +934,7 @@ export async function createTournaments() {
 
   const skawina2014 = await Tournament.create({
     name: "Skawina 2014",
+    tournamentTierId: polishTournament.id, // TODO: to be adjusted
     weight: 3,
     date: new Date(2014, 0, 1)
   });
@@ -860,6 +943,7 @@ export async function createTournaments() {
 
   const zerkow2014 = await Tournament.create({
     name: "Żerków 2014",
+    tournamentTierId: polishTournament.id, // TODO: to be adjusted
     weight: 5,
     date: new Date(2014, 0, 1)
   });
@@ -868,6 +952,7 @@ export async function createTournaments() {
 
   const blaszki2015 = await Tournament.create({
     name: "Błaszki 2015",
+    tournamentTierId: polishTournament.id, // TODO: to be adjusted
     weight: 2,
     date: new Date(2015, 0, 1)
   });
@@ -876,7 +961,7 @@ export async function createTournaments() {
 
   const bytom2015 = await Tournament.create({
     name: "Bytom 2015",
-    weight: 6,
+    tournamentTierId: polishChampionships.id,
     date: new Date(2015, 0, 1)
   });
 
@@ -884,6 +969,7 @@ export async function createTournaments() {
 
   const czarnkow2015 = await Tournament.create({
     name: "Czarnków 2015",
+    tournamentTierId: polishTournament.id, // TODO: to be adjusted
     weight: 2,
     date: new Date(2015, 0, 1)
   });
@@ -892,6 +978,7 @@ export async function createTournaments() {
 
   const focus2015 = await Tournament.create({
     name: "Focus 2015",
+    tournamentTierId: polishTournament.id, // TODO: to be adjusted
     weight: 5,
     date: new Date(2015, 0, 1)
   });
@@ -900,6 +987,7 @@ export async function createTournaments() {
 
   const gubin2015 = await Tournament.create({
     name: "Gubin 2015",
+    tournamentTierId: polishTournament.id, // TODO: to be adjusted
     weight: 1,
     date: new Date(2015, 0, 1)
   });
@@ -908,6 +996,7 @@ export async function createTournaments() {
 
   const lublin2015 = await Tournament.create({
     name: "Lublin 2015",
+    tournamentTierId: polishTournament.id, // TODO: to be adjusted
     weight: 1,
     date: new Date(2015, 0, 1)
   });
@@ -916,6 +1005,7 @@ export async function createTournaments() {
 
   const miedzyzdroje2015 = await Tournament.create({
     name: "Międzyzdroje 2015",
+    tournamentTierId: polishTournament.id, // TODO: to be adjusted
     weight: 1,
     date: new Date(2015, 0, 1)
   });
@@ -924,6 +1014,7 @@ export async function createTournaments() {
 
   const przygodzice2015 = await Tournament.create({
     name: "Przygodzice 2015",
+    tournamentTierId: polishTournament.id, // TODO: to be adjusted
     weight: 1,
     date: new Date(2015, 0, 1)
   });
@@ -932,6 +1023,7 @@ export async function createTournaments() {
 
   const skawina2015 = await Tournament.create({
     name: "Skawina 2015",
+    tournamentTierId: polishTournament.id, // TODO: to be adjusted
     weight: 3,
     date: new Date(2015, 0, 1)
   });
@@ -940,6 +1032,7 @@ export async function createTournaments() {
 
   const zerkow2015 = await Tournament.create({
     name: "Żerków 2015",
+    tournamentTierId: polishTournament.id, // TODO: to be adjusted
     weight: 5,
     date: new Date(2015, 0, 1)
   });
@@ -948,6 +1041,7 @@ export async function createTournaments() {
 
   const blaszki2016 = await Tournament.create({
     name: "Błaszki 2016",
+    tournamentTierId: polishTournament.id, // TODO: to be adjusted
     weight: 2,
     date: new Date(2016, 0, 1)
   });
@@ -956,6 +1050,7 @@ export async function createTournaments() {
 
   const bytom2016 = await Tournament.create({
     name: "Bytom M1 2016",
+    tournamentTierId: polishTournament.id, // TODO: to be adjusted
     weight: 1,
     date: new Date(2016, 0, 1)
   });
@@ -964,6 +1059,7 @@ export async function createTournaments() {
 
   const czestochowa2016 = await Tournament.create({
     name: "Częstochowa M1 2016",
+    tournamentTierId: polishTournament.id, // TODO: to be adjusted
     weight: 1,
     date: new Date(2016, 0, 1)
   });
@@ -972,6 +1068,7 @@ export async function createTournaments() {
 
   const focus2016 = await Tournament.create({
     name: "Focus 2016",
+    tournamentTierId: polishTournament.id, // TODO: to be adjusted
     weight: 5,
     date: new Date(2016, 0, 1)
   });
@@ -980,6 +1077,7 @@ export async function createTournaments() {
 
   const gubin2016 = await Tournament.create({
     name: "Gubin 2016",
+    tournamentTierId: polishTournament.id, // TODO: to be adjusted
     weight: 1,
     date: new Date(2016, 0, 1)
   });
@@ -988,6 +1086,7 @@ export async function createTournaments() {
 
   const lfn2016 = await Tournament.create({
     name: "LFN 2016",
+    tournamentTierId: polishTournament.id, // TODO: to be adjusted
     weight: 4,
     date: new Date(2016, 0, 1)
   });
@@ -996,6 +1095,7 @@ export async function createTournaments() {
 
   const lublin2016 = await Tournament.create({
     name: "Lublin 2016",
+    tournamentTierId: polishTournament.id, // TODO: to be adjusted
     weight: 1,
     date: new Date(2016, 0, 1)
   });
@@ -1004,6 +1104,7 @@ export async function createTournaments() {
 
   const marki2016 = await Tournament.create({
     name: "Marki M1 2016",
+    tournamentTierId: polishTournament.id, // TODO: to be adjusted
     weight: 1,
     date: new Date(2016, 0, 1)
   });
@@ -1012,7 +1113,7 @@ export async function createTournaments() {
 
   const olkusz2016 = await Tournament.create({
     name: "Olkusz 2016",
-    weight: 6,
+    tournamentTierId: polishChampionships.id,
     date: new Date(2016, 0, 1)
   });
 
@@ -1020,6 +1121,7 @@ export async function createTournaments() {
 
   const radom2016 = await Tournament.create({
     name: "Radom M1 2016",
+    tournamentTierId: polishTournament.id, // TODO: to be adjusted
     weight: 1,
     date: new Date(2016, 0, 1)
   });
@@ -1028,6 +1130,7 @@ export async function createTournaments() {
 
   const skawina2016 = await Tournament.create({
     name: "Skawina 2016",
+    tournamentTierId: polishTournament.id, // TODO: to be adjusted
     weight: 3,
     date: new Date(2016, 0, 1)
   });
@@ -1036,6 +1139,7 @@ export async function createTournaments() {
 
   const zabrze2016 = await Tournament.create({
     name: "Zabrze M1 2016",
+    tournamentTierId: polishTournament.id, // TODO: to be adjusted
     weight: 1,
     date: new Date(2016, 0, 1)
   });
@@ -1044,6 +1148,7 @@ export async function createTournaments() {
 
   const zerkow2016 = await Tournament.create({
     name: "Żerków 2016",
+    tournamentTierId: polishTournament.id, // TODO: to be adjusted
     weight: 5,
     date: new Date(2016, 0, 1)
   });
@@ -1052,6 +1157,7 @@ export async function createTournaments() {
 
   const blaszki2017 = await Tournament.create({
     name: "Błaszki 2017",
+    tournamentTierId: polishTournament.id, // TODO: to be adjusted
     weight: 2,
     date: new Date(2017, 0, 1)
   });
@@ -1060,6 +1166,7 @@ export async function createTournaments() {
 
   const chojnice2017 = await Tournament.create({
     name: "Chojnice 2017",
+    tournamentTierId: polishTournament.id, // TODO: to be adjusted
     weight: 1,
     date: new Date(2017, 0, 1)
   });
@@ -1068,6 +1175,7 @@ export async function createTournaments() {
 
   const focus2017 = await Tournament.create({
     name: "Focus 2017",
+    tournamentTierId: polishTournament.id, // TODO: to be adjusted
     weight: 5,
     date: new Date(2017, 0, 1)
   });
@@ -1076,6 +1184,7 @@ export async function createTournaments() {
 
   const freestival2017 = await Tournament.create({
     name: "Freestival 2017",
+    tournamentTierId: polishTournament.id, // TODO: to be adjusted
     weight: 5,
     date: new Date(2017, 0, 1)
   });
@@ -1084,7 +1193,7 @@ export async function createTournaments() {
 
   const olkusz2017 = await Tournament.create({
     name: "Olkusz 2017",
-    weight: 6,
+    tournamentTierId: polishChampionships.id,
     date: new Date(2017, 0, 1)
   });
 
@@ -1092,6 +1201,7 @@ export async function createTournaments() {
 
   const skawina2017 = await Tournament.create({
     name: "Skawina 2017",
+    tournamentTierId: polishTournament.id, // TODO: to be adjusted
     weight: 3,
     date: new Date(2017, 0, 1)
   });
@@ -3145,43 +3255,145 @@ export async function createResults() {
 
 export async function createPlaceToPoints() {
   debug("creating place to points starting...");
-
+  await PlaceToPoints.create({
+    place: 0, // for competing, without multiplier
+    points: 1
+  });
   await PlaceToPoints.create({
     place: 1,
-    points: 125
+    points: 100
   });
   await PlaceToPoints.create({
     place: 2,
-    points: 75
+    points: 70
   });
   await PlaceToPoints.create({
     place: 3,
-    points: 55
+    points: 50
   });
   await PlaceToPoints.create({
     place: 4,
-    points: 45
+    points: 40
   });
   await PlaceToPoints.create({
     place: 5,
-    points: 25
+    points: 20
   });
   await PlaceToPoints.create({
     place: 6,
-    points: 25
+    points: 20
   });
   await PlaceToPoints.create({
     place: 7,
-    points: 25
+    points: 20
   });
   await PlaceToPoints.create({
     place: 8,
-    points: 25
+    points: 20
+  });
+  await PlaceToPoints.create({
+    place: 9,
+    points: 10
+  });
+  await PlaceToPoints.create({
+    place: 10,
+    points: 10
+  });
+  await PlaceToPoints.create({
+    place: 11,
+    points: 10
+  });
+  await PlaceToPoints.create({
+    place: 12,
+    points: 10
+  });
+  await PlaceToPoints.create({
+    place: 13,
+    points: 10
+  });
+  await PlaceToPoints.create({
+    place: 14,
+    points: 10
+  });
+  await PlaceToPoints.create({
+    place: 15,
+    points: 10
+  });
+  await PlaceToPoints.create({
+    place: 16,
+    points: 10
+  });
+  await PlaceToPoints.create({
+    place: 17,
+    points: 5
+  });
+  await PlaceToPoints.create({
+    place: 18,
+    points: 5
+  });
+  await PlaceToPoints.create({
+    place: 19,
+    points: 5
+  });
+  await PlaceToPoints.create({
+    place: 20,
+    points: 5
+  });
+  await PlaceToPoints.create({
+    place: 21,
+    points: 5
+  });
+  await PlaceToPoints.create({
+    place: 22,
+    points: 5
+  });
+  await PlaceToPoints.create({
+    place: 23,
+    points: 5
+  });
+  await PlaceToPoints.create({
+    place: 24,
+    points: 5
+  });
+  await PlaceToPoints.create({
+    place: 25,
+    points: 5
+  });
+  await PlaceToPoints.create({
+    place: 26,
+    points: 5
+  });
+  await PlaceToPoints.create({
+    place: 27,
+    points: 5
+  });
+  await PlaceToPoints.create({
+    place: 28,
+    points: 5
+  });
+  await PlaceToPoints.create({
+    place: 29,
+    points: 5
+  });
+  await PlaceToPoints.create({
+    place: 30,
+    points: 5
+  });
+  await PlaceToPoints.create({
+    place: 31,
+    points: 5
+  });
+  await PlaceToPoints.create({
+    place: 32,
+    points: 5
   });
 }
 
+/* IMPORTANT: DO NOT CHANGE ORDER! ADD FUNCTION CALL AT THE END! */
+
 export async function mockDb() {
   await createUsers();
+  await createTournamentTiers();
   await createPlaceToPoints();
   await createNationalities();
   await createLocations();
