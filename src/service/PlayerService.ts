@@ -4,7 +4,8 @@ import {
   PlaceToPoints,
   Player,
   Result,
-  Tournament
+  Tournament,
+  TournamentTier
 } from "../model";
 import { PlayerStatistics } from "../types/types";
 import { Op } from "sequelize";
@@ -120,11 +121,13 @@ export class PlayerService {
       include: [
         {
           model: Tournament,
-          attributes: ["weight", "name", "date"]
+          attributes: ["tournamentTierId", "name", "date"]
         }
       ],
       transaction
     });
+
+    const tournamentTiers = await TournamentTier.findAll();
 
     const placeToPoints = await PlaceToPoints.findAll();
 
@@ -137,7 +140,11 @@ export class PlayerService {
         "tournament.date": result["tournament.date"]
           .toISOString()
           .split("T")[0],
-        points: basePoints * result["tournament.weight"]
+        points:
+          basePoints *
+          tournamentTiers.find(
+            (tier) => tier.id === result["tournament.tournamentTierId"]
+          )
       };
     });
 
