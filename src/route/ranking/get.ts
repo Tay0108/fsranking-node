@@ -7,7 +7,16 @@ const rankingService = new RankingService();
 const rankingRoutes = {
   get: async (req, res) => {
     try {
-      const ranking = await rankingService.get(1); // TODO: parametrize it, hardcoded to: battle, male
+      const ranking = await rankingService.get(true);
+      res.json(ranking);
+    } catch (error) {
+      debug(error);
+    }
+  },
+
+  getAllTime: async (req, res) => {
+    try {
+      const ranking = await rankingService.get(false);
       res.json(ranking);
     } catch (error) {
       debug(error);
@@ -17,4 +26,5 @@ const rankingRoutes = {
 
 export const getRanking = (app) => {
   app.get("/ranking", rankingRoutes.get);
+  app.get("/ranking-all-time", rankingRoutes.getAllTime);
 };
