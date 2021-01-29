@@ -1,5 +1,6 @@
 import { PlayerAttributes } from "../model/playerModel";
 import {
+  Category,
   Nationality,
   PlaceToPoints,
   Player,
@@ -62,13 +63,34 @@ export class PlayerService {
     return Player.findAll({ transaction });
   }
 
-  async getPlayerRankingPlace(playerId: number, transaction?) {
-    const ranking = await rankingService.get(1, transaction);
-    const player = ranking.find((rankingEntry) => playerId === rankingEntry.id);
-    if (player) {
-      return player.place;
+  async getPlayerRankingPlacesByCategory(
+    playerId: number,
+    gender,
+    transaction?
+  ) {
+    const categories = await Category.findAll({
+      where: { gender },
+      transaction
+    });
+
+    const places = {};
+
+    for (const category of categories) {
+      const categoryRanking = await rankingService.getResultsByCategory(
+        category,
+        transaction
+      );
+      const player = categoryRanking.find(
+        (rankingEntry) => playerId === rankingEntry.id
+      );
+      if (player) {
+        places[category.name] = player.place;
+      } else {
+        places[category.name] = null;
+      }
     }
-    return null;
+
+    return places;
   }
 
   async getPlayerStatistics(

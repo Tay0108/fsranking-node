@@ -1,5 +1,5 @@
 import { PlayerService } from "../../service/PlayerService";
-import { dbConfig } from "../../model";
+import { dbConfig, Player } from "../../model";
 
 const debug = require("debug")("player.get");
 
@@ -17,7 +17,7 @@ const playerRoutes = {
 
   getById: async (req, res) => {
     try {
-      const id : number = +req.params.id;
+      const id: number = +req.params.id;
 
       const player = await dbConfig.transaction(async (transaction) => {
         const playerData = await playerService.getByIdWithNationality(
@@ -29,15 +29,24 @@ const playerRoutes = {
           throw new Error("Player of given id not found.");
         }
 
+        const gender = (await Player.findByPk(id, { transaction })).gender;
+
         playerData.statistics = await playerService.getPlayerStatistics(
           id,
           transaction
         );
 
-        playerData.history = await playerService.getPlayerHistory(id, transaction);
+        playerData.history = await playerService.getPlayerHistory(
+          id,
+          transaction
+        );
 
         // TODO: can it be done faster?
-        playerData.rankingPlace = await playerService.getPlayerRankingPlace(id, transaction);
+        playerData.rankingPlace = await playerService.getPlayerRankingPlacesByCategory(
+          id,
+          gender,
+          transaction
+        );
 
         return playerData;
       });

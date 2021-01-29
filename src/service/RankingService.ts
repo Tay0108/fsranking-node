@@ -11,19 +11,35 @@ import {
 const debug = require("debug")("ranking.service");
 
 export class RankingService {
-  async get(categoryId: number, transaction?) {
-    const category = await Category.findByPk(categoryId, { transaction });
-    const gender: string = category.gender; // TODO: both genders
+  async getResultsByCategory(category, scaleByYears, transaction?) {
+    const categoryId = category.id;
+    const gender: string = category.gender;
 
     const tournamentTiers = await TournamentTier.findAll();
     const tournamentWeights = new Map();
+    const tournamentYears = new Map();
+
+    const currentYear = new Date().getFullYear();
+
+    const scaleByYearsFactors: Map<number, number> = new Map();
+
+    if (scaleByYears) {
+      scaleByYearsFactors.set(1, 1);
+      scaleByYearsFactors.set(2, 0.75);
+      scaleByYearsFactors.set(3, 0.5);
+      scaleByYearsFactors.set(4, 0.25);
+    }
 
     (
       await Tournament.findAll({
-        attributes: ["id", "tournamentTierId"],
+        attributes: ["id", "date", "tournamentTierId"],
         raw: true
       })
     ).forEach((obj) => {
+      if (scaleByYears) {
+        const year = new Date(obj.date).getFullYear();
+        tournamentYears.set(obj.id, year);
+      }
       const weight = tournamentTiers.find(
         (tier) => tier.id === obj.tournamentTierId
       ).weight;
@@ -72,18 +88,30 @@ export class RankingService {
     const ranking = new Map();
 
     results.forEach((result) => {
+      let yearScalingFactor = 1;
+      if (scaleByYears) {
+        const yearDifference =
+          tournamentYears.get(result.tournamentId) - currentYear;
+        yearScalingFactor = scaleByYearsFactors.has(yearDifference)
+          ? scaleByYearsFactors.get(yearDifference)
+          : 0;
+      }
       if (!ranking.has(result.playerId)) {
         ranking.set(result.playerId, {
           ...players.filter((player) => player.id === result.playerId)[0],
           points:
             placeToPoints.filter((entry) => entry.place === result.place)[0]
-              .points * tournamentWeights.get(result.tournamentId)
+              .points *
+            tournamentWeights.get(result.tournamentId) *
+            yearScalingFactor
         });
       } else {
         const rankingEntry = ranking.get(result.playerId);
         rankingEntry.points +=
           placeToPoints.filter((entry) => entry.place === result.place)[0]
-            .points * tournamentWeights.get(result.tournamentId);
+            .points *
+          tournamentWeights.get(result.tournamentId) *
+          yearScalingFactor;
       }
     });
 
@@ -98,5 +126,28 @@ export class RankingService {
     });
 
     return rankingWithPlaces;
+  }
+
+  async get(scaleByYears: boolean, transaction?) {
+    const categories = await Category.findAll({
+      transaction
+    });
+
+    const ranking = {};
+
+    for (const category of categories) {
+      const categoryData = await this.getResultsByCategory(
+        category,
+        scaleByYears,
+        transaction
+      );
+      if (!ranking[category.gender]) {
+        ranking[category.gender] = {};
+      }
+
+      ranking[category.gender][category.name] = categoryData;
+    }
+
+    return ranking;
   }
 }
