@@ -1,14 +1,17 @@
 import {
   Category,
   Nationality,
-  PlaceToPoints,
   Player,
-  Result,
   Tournament,
   TournamentTier
 } from "../model";
+import { ResultService } from "./ResultService";
+import { PlaceToPointsService } from "./PlaceToPointsService";
 
 const debug = require("debug")("ranking.service");
+
+const resultService = new ResultService();
+const placeToPointsService = new PlaceToPointsService();
 
 export class RankingService {
   async getResultsByCategory(category, scaleByYears, transaction?) {
@@ -46,14 +49,12 @@ export class RankingService {
       tournamentWeights.set(obj.id, weight);
     });
 
-    const results = await Result.findAll({
-      where: { categoryId },
+    const results = await resultService.getAllByCategoryId(
+      categoryId,
       transaction
-    });
-    const placeToPoints = await PlaceToPoints.findAll({
-      raw: true,
-      transaction
-    });
+    );
+
+    const placeToPoints = await placeToPointsService.getAll(transaction);
 
     let players;
 
