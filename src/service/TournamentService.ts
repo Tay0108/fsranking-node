@@ -1,5 +1,13 @@
 import { TournamentAttributes } from "../model/tournamentModel";
-import { Category, Location, PlaceToPoints, Player, Result, Tournament } from "../model";
+import {
+  Category,
+  Location,
+  PlaceToPoints,
+  Player,
+  Result,
+  Tournament,
+  TournamentTier
+} from "../model";
 import { CategoryResult } from "../types/types";
 
 const debug = require("debug")("tournament.service");
@@ -51,19 +59,21 @@ export class TournamentService {
   }
 
   getAll(transaction?) {
-    return Tournament.findAll({ transaction });
-  }
-
-  getAllWithLocation(transaction?) {
     return Tournament.findAll({
       transaction,
       raw: true,
       nest: true,
+      attributes: {
+        exclude: ["locationId", "tournamentTierId"]
+      },
       include: [
         {
           model: Location
+        },
+        {
+          model: TournamentTier
         }
-      ]
+      ],
     });
   }
 

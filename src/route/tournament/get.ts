@@ -8,7 +8,7 @@ const tournamentService = new TournamentService();
 const tournamentRoutes = {
   getAll: async (req, res) => {
     try {
-      const allTournaments = await tournamentService.getAllWithLocation();
+      const allTournaments = await tournamentService.getAll();
       const today: Date = new Date();
       const pastTournaments: Array<TournamentAttributes> = [];
       const upcomingTournaments: Array<TournamentAttributes> = [];
