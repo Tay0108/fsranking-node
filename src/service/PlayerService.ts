@@ -9,7 +9,6 @@ import {
   TournamentTier
 } from "../model";
 import { PlayerStatistics } from "../types/types";
-import { Op } from "sequelize";
 import { TournamentAttributes } from "../model/tournamentModel";
 import { RankingService } from "./RankingService";
 
@@ -97,38 +96,42 @@ export class PlayerService {
     playerId: number,
     transaction?
   ): Promise<PlayerStatistics> {
-    // TODO: add also statistics by category
-    const starts = await Result.count({
+    const playerGender = (await Player.findByPk(playerId, { transaction }))
+      .gender;
+    const categories = await Category.findAll({
+      where: { gender: playerGender },
+      transaction
+    });
+
+    const playerResults = await Result.findAll({
       where: {
         playerId
       },
       transaction
     });
-    const podiums = await Result.count({
-      where: {
-        playerId,
-        [Op.or]: [
-          {
-            place: {
-              [Op.between]: [1, 3]
-            }
-          }
-        ]
-      },
-      transaction
-    });
-    const victories = await Result.count({
-      where: {
-        playerId,
-        place: 1
-      },
-      transaction
-    });
-    return {
-      starts,
-      podiums,
-      victories
-    };
+
+    const statistics = {};
+
+    for (const category of categories) {
+      const categoryResults = playerResults.filter(
+        (result) => result.categoryId === category.id
+      );
+
+      const starts: number = categoryResults.length;
+      const podiums: number = categoryResults.filter(
+        (result) => result.place <= 3
+      ).length;
+      const victories: number = categoryResults.filter(
+        (result) => result.place === 1
+      ).length;
+
+      statistics[category.name] = {
+        starts,
+        podiums,
+        victories
+      };
+    }
+    return statistics;
   }
 
   async getPlayerHistory(

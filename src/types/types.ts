@@ -3,8 +3,12 @@ export interface CategoryResult {
   place: number;
 }
 
-export interface PlayerStatistics {
+export interface PlayerCategoryStatistics {
   starts: number;
   podiums: number;
   victories: number;
+}
+
+export interface PlayerStatistics {
+  [key: string]: PlayerCategoryStatistics;
 }
