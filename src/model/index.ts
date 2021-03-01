@@ -21,7 +21,10 @@ export const dbConfig = new sequelize.Sequelize(
     dialect: "postgres",
     ssl: process.env.DB_SSL === "true",
     dialectOptions: {
-      ssl: process.env.DB_SSL === "true",
+      ssl: {
+        require: process.env.DB_SSL === "true",
+        rejectUnauthorized: false
+      }
     },
     pool: {
       min: 0,
