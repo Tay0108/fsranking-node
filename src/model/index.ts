@@ -19,6 +19,10 @@ export const dbConfig = new sequelize.Sequelize(
     port: Number(process.env.DB_PORT) || 5432,
     host: process.env.DB_HOST || "localhost",
     dialect: "postgres",
+    ssl: process.env.DB_SSL === "true",
+    dialectOptions: {
+      ssl: process.env.DB_SSL === "true",
+    },
     pool: {
       min: 0,
       max: 5,
