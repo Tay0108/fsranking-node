@@ -30,7 +30,7 @@ export async function createTournamentTiers() {
   });
   await TournamentTier.create({
     name: "Zawody Lokalne",
-    weight: 1
+    weight: 0 // changed to not give points
   });
 }
 
