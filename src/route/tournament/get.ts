@@ -13,24 +13,42 @@ const tournamentRoutes = {
       const pastTournaments: Array<TournamentAttributes> = [];
       const upcomingTournaments: Array<TournamentAttributes> = [];
 
+      const pastTournamentLocations = new Set();
+      const upcomingTournamentLocations = new Set();
+
       allTournaments.forEach((tournament) => {
         const tournamentDate: Date = new Date(tournament.date);
         if (tournamentDate < today) {
           pastTournaments.push({
             ...tournament,
-            date: tournamentDate.toISOString().split('T')[0]
+            date: tournamentDate.toISOString().split("T")[0]
           });
+          if (tournament.locationId) {
+            pastTournamentLocations.add(tournament.locationId);
+          }
         } else {
           upcomingTournaments.push({
             ...tournament,
-            date: tournamentDate.toISOString().split('T')[0]
+            date: tournamentDate.toISOString().split("T")[0]
           });
+          if (tournament.locationId) {
+            upcomingTournamentLocations.add(tournament.locationId);
+          }
         }
       });
 
+      const pastTournamentsCount = pastTournaments.length;
+      const pastTournamentLocationsCount = pastTournamentLocations.size;
+      const upcomingTournamentsCount = upcomingTournaments.length;
+      const upcomingTournamentLocationsCount = upcomingTournamentLocations.size;
+
       res.json({
         pastTournaments,
-        upcomingTournaments
+        upcomingTournaments,
+        pastTournamentsCount,
+        pastTournamentLocationsCount,
+        upcomingTournamentsCount,
+        upcomingTournamentLocationsCount
       });
     } catch (error) {
       debug(error);
