@@ -44,9 +44,9 @@ const tournamentRoutes = {
 
       res.json({
         pastTournaments,
-        upcomingTournaments,
         pastTournamentsCount,
         pastTournamentLocationsCount,
+        upcomingTournaments,
         upcomingTournamentsCount,
         upcomingTournamentLocationsCount
       });
