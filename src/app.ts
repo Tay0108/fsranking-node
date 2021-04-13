@@ -1,4 +1,5 @@
 require("dotenv").config();
+import errorHandler from "./errors/errorHandler";
 import { mockDb } from "./mock/mock-db";
 import { dbConfig } from "./model";
 const express = require("express");
@@ -56,5 +57,7 @@ app.use(
 );
 
 route(app);
+
+app.use(errorHandler);
 
 export { app };
