@@ -12,3 +12,9 @@ export interface PlayerCategoryStatistics {
 export interface PlayerStatistics {
   [key: string]: PlayerCategoryStatistics;
 }
+
+export enum Gender {
+  Male = "Male",
+  Female = "Female",
+  Both = "Both"
+}
