@@ -53,7 +53,8 @@ export const patchCategory = (app) => {
           throw new BadRequestError("Illegal gender value.");
         }
         return Promise.resolve();
-      })
+      }),
+      body("name", "Name cannot be empty.").optional().not().isEmpty()
     ],
     validateRequest,
     categoryRoutes.patch
